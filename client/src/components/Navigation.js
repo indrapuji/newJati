@@ -20,7 +20,12 @@ export default () => {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-around">
           <Link to="/">Home</Link>
-          <Link to="/pembaharuan">Pembaharuan</Link>
+          <NavDropdown title="Pembaharuan">
+            <NavDropdown.Item href="https://jatisejahtera-cms.vercel.app/" style={{ color: "blue" }}>
+              Admin
+            </NavDropdown.Item>
+          </NavDropdown>
+          {/* <Link to="/pembaharuan">Pembaharuan</Link> */}
           <NavDropdown title="Profile">
             <NavDropdown.Item>
               <Link to="/profile/about">Tentang Kami</Link>
@@ -66,15 +71,15 @@ export default () => {
               </Dropdown.Item> */}
             </DropdownButton>
 
-            <NavDropdown.Item>
+            {/* <NavDropdown.Item>
               <Link to="/data/update">Pengkinian Data</Link>
-            </NavDropdown.Item>
+            </NavDropdown.Item> */}
             {/* <NavDropdown.Item>
               <Link to="/data/claim">Pengajuan Claim</Link>
             </NavDropdown.Item> */}
-            <NavDropdown.Item href="https://jatisejahtera-cms.vercel.app/" style={{ color: "blue" }}>
+            {/* <NavDropdown.Item href="https://jatisejahtera-cms.vercel.app/" style={{ color: "blue" }}>
               Admin
-            </NavDropdown.Item>
+            </NavDropdown.Item> */}
           </NavDropdown>
           <Link to="/berita">Berita</Link>
           <Link to="/galery">Galery</Link>
