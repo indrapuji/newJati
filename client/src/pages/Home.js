@@ -123,7 +123,13 @@ export default () => {
                 <Card.Body>
                   <Card.Img variant="top" src={SantunanKematian} style={{ height: "10rem", borderRadius: 40 }} />
                   <Card.Title>Santunan Kematian</Card.Title>
-                  <Card.Text>Santunan kematian dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar oleh Yayasan.</Card.Text>
+                  <Card.Text>
+                    Santunan kematian dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar oleh Yayasan.
+                  </Card.Text>
+                  <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
+                  <Button variant="warning" block href="https://dev.trendcom.xyz/download?file=Permohonan%20Santunan%20Kematian%20_%20Santunan%20Cacat.docx">
+                    lampiran
+                  </Button>
                 </Card.Body>
                 <Card.Footer>
                   <Button variant="success" block onClick={handdleKematian}>
@@ -135,7 +141,13 @@ export default () => {
                 <Card.Body>
                   <Card.Img variant="top" src={NilaiHidup} style={{ height: "10rem" }} />
                   <Card.Title>Manfaat Nilai Hidup</Card.Title>
-                  <Card.Text>Nilai Hidup dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar oleh Yayasan.</Card.Text>
+                  <Card.Text>
+                    Nilai Hidup dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar oleh Yayasan.
+                  </Card.Text>
+                  <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
+                  <Button variant="warning" block href="https://dev.trendcom.xyz/download?file=Permohonan%20Nilai%20Hidup.docx">
+                    lampiran
+                  </Button>
                 </Card.Body>
                 <Card.Footer>
                   <Button variant="success" block onClick={handdleManfaat}>
@@ -148,8 +160,13 @@ export default () => {
                   <Card.Img variant="top" src={Rawat} style={{ height: "10rem" }} />
                   <Card.Title>Bantuan Rawat Inap</Card.Title>
                   <Card.Text>
-                    Penggantian Biaya Rawat Inap dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar oleh Yayasan.
+                    Penggantian Biaya Rawat Inap dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar oleh
+                    Yayasan.
                   </Card.Text>
+                  <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
+                  <Button variant="warning" block href="https://dev.trendcom.xyz/download?file=Permohonan%20Bantuan%20Biaya%20Rawat%20Inap.docx">
+                    lampiran
+                  </Button>
                 </Card.Body>
                 <Card.Footer>
                   <Button variant="success" block onClick={handdleKesehatan}>

@@ -4,13 +4,13 @@ import { Button, Form, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
-import host from '../../hooks/host'
+import host from "../../hooks/host";
 
 export default () => {
   // const host = "http://localhost:3001";
   // const host = "https://jatisejahtera-cms.herokuapp.com";
   // const host = "http://128.199.238.147:3001";
-  
+
   const history = useHistory();
   const pageTransition = {
     init: {
@@ -42,6 +42,7 @@ export default () => {
     pernyataan_dari_pensiunan: "",
     fotokopi_kp: "",
     fotokopi_sk_pensiun: "",
+    lampiran: "",
   });
   const onFormChange = (e) => {
     e.preventDefault();
@@ -113,6 +114,10 @@ export default () => {
           <Form.Group>
             <Form.Label>Photo Copy SK Pensiun </Form.Label>
             <Form.File.Input name="fotokopi_sk_pensiun" onChange={onFormChange} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Lampiran </Form.Label>
+            <Form.File.Input name="lampiran" onChange={onFormChange} />
           </Form.Group>
           <Button variant="success" onClick={handdleBack} block>
             Back

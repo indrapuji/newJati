@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import { Container, Form, Row, Col, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { motion } from "framer-motion";
 import axios from "axios";
 import Swal from "sweetalert2";
