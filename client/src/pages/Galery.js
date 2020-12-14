@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import Penanaman from "../assets/image/penanamanjagung.jpeg";
-import BangunKemandirian from "../assets/image/bangunkemandirian.jpeg";
-import BriDukung from "../assets/image/bridukungjati.jpeg";
-import Santunan from "../assets/image/santunan.jpeg";
+// import Penanaman from "../assets/image/penanamanjagung.jpeg";
+// import BangunKemandirian from "../assets/image/bangunkemandirian.jpeg";
+// import BriDukung from "../assets/image/bridukungjati.jpeg";
+// import Santunan from "../assets/image/santunan.jpeg";
 
 import Silaturahmi from "../assets/image/silaturahmi.png";
 import Sosialisasi from "../assets/image/sosialisasi.png";

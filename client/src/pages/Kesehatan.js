@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import { Container, Image } from "react-bootstrap";
 import { motion } from "framer-motion";
 import Kesehatan from "../assets/image/kesehatan2.jpg";
-import TabelKesehatan from "../assets/image/tabel_kesehatan2.png";
+// import TabelKesehatan from "../assets/image/tabel_kesehatan2.png";
 import SantunanKematian from "../assets/image/santunan_kematian.jpg";
 import SantunanNilaiHidup from "../assets/image/santunan_nilaihidup.jpg";
 import ManfaatKesehatan from '../assets/image/Ragam_manfaat.jpg'

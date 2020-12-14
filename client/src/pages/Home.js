@@ -16,7 +16,7 @@ import Santunan from "../assets/image/santunan.jpeg";
 import { Link, useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 import Visimisi from "../components/Visimisi";
-import Profile from "../components/Profile";
+// import Profile from "../components/Profile";
 import Berita from "../components/Berita";
 import "../page.css";
 import Aos from "aos";
@@ -177,7 +177,7 @@ export default () => {
             </CardDeck>
           </div>
 
-          <Profile />
+          {/* <Profile /> */}
           <Berita />
           <Visimisi />
         </div>
