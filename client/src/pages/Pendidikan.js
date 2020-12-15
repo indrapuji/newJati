@@ -3,7 +3,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { Container, Image } from "react-bootstrap";
 import { motion } from "framer-motion";
-import Pendidikan from "../assets/image/pendidikan3.jpg";
+import Pendidikan from "../assets/image/pendidikanasuransi.jpg";
 
 export default () => {
   const pageTransition = {
