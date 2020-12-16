@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
-import { Container, Image } from "react-bootstrap";
-import { motion } from "framer-motion";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import React, { useEffect } from 'react';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+import { Container, Image } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 export default () => {
   useEffect(() => {
@@ -24,10 +24,17 @@ export default () => {
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
       <Navigation />
-      <div style={{ position: "relative" }}>
-        {/* <div data-aos="zoom-in" style={{ position: "absolute", left: 0, zIndex: 0, top: 50 }}>
-          <Image src={require("../assets/landingpage/leaf_bottom.png")} style={{ width: 150 }} />
-        </div> */}
+
+      <Container>
+        <div style={{ marginTop: 50 }}>
+          <p style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 30 }}>Company Profile</p>
+
+          <div style={{ textAlign: 'center' }}>
+            <iframe src="https://app.trendcom.xyz/uploads/1608151324392-Jatinew.pdf" title="title" style={{ width: 700, height: 700 }}>
+              {/* Presss me: <a href="./resources/crayola.pdf">Download PDF</a> */}
+            </iframe>
+
+            {/*         
         <div data-aos="fade-up" style={{ position: "absolute", right: 100, zIndex: 0, top: 400 }}>
           <Image src={require("../assets/landingpage/leaf_top_large.png")} style={{ width: 200 }} />
         </div>
@@ -69,10 +76,10 @@ export default () => {
               <li>Bidang Sosial dan Kemanusiaan</li>
               <li>Bidang Perumahan</li>
               <li>Bidang Kesehatan</li>
-            </ol>
+            </ol>*/}
           </div>
-        </Container>
-      </div>
+        </div>
+      </Container>
       <Footer />
     </motion.div>
   );

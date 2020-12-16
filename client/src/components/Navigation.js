@@ -27,9 +27,9 @@ export default () => {
           </NavDropdown>
           {/* <Link to="/pembaharuan">Pembaharuan</Link> */}
           <NavDropdown title="Profile">
-            {/* <NavDropdown.Item>
-              <Link to="/profile/about">Tentang Kami</Link>
-            </NavDropdown.Item> */}
+            <NavDropdown.Item>
+              <Link to="/profile/about">Company Profile</Link>
+            </NavDropdown.Item>
             <NavDropdown.Item>
               <Link to="/profile/kepengurusan">Kepengurusan</Link>
             </NavDropdown.Item>
