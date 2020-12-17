@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
-import { Container, Form, Row, Col, Button } from "react-bootstrap";
-import { motion } from "framer-motion";
-import axios from "axios";
-import Swal from "sweetalert2";
-import host from "../hooks/host";
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+import { Container, Form, Row, Col, Button } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import host from '../hooks/host';
 
 export default () => {
   // const host = "http://localhost:3001";
@@ -26,37 +26,37 @@ export default () => {
   };
   const history = useHistory();
   const [dataForm, setDataForm] = useState({
-    nama: "",
-    no_induk: "",
-    email: "",
-    tgl_lahir: "",
-    no_ktp: "",
-    no_bpjs: "",
-    nama_bank: "",
-    no_rekening: "",
-    satuan_kerja: "",
-    golongan_pangkat: "",
-    no_telp: "",
-    alamat: "",
-    kelurahan: "",
-    kecamatan: "",
-    kota: "",
-    kodepos: "",
-    provinsi: "",
-    nama_pasangan: "",
-    tgl_lahir_pasangan: "",
-    no_telp_pasangan: "",
-    no_ktp_pasangan: "",
-    no_bpjs_pasangan: "",
-    nama_bank_pasangan: "",
-    no_rekening_pasangan: "",
-    nama_anak: "",
-    tgl_lahir_anak: "",
-    no_tlp_anak: "",
-    no_ktp_anak: "",
-    no_bpjs_anak: "",
-    nama_bank_anak: "",
-    no_rekening_anak: "",
+    nama: '',
+    no_induk: '',
+    email: '',
+    tgl_lahir: '',
+    no_ktp: '',
+    no_bpjs: '',
+    nama_bank: '',
+    no_rekening: '',
+    satuan_kerja: '',
+    golongan_pangkat: '',
+    no_telp: '',
+    alamat: '',
+    kelurahan: '',
+    kecamatan: '',
+    kota: '',
+    kodepos: '',
+    provinsi: '',
+    nama_pasangan: '',
+    tgl_lahir_pasangan: '',
+    no_telp_pasangan: '',
+    no_ktp_pasangan: '',
+    no_bpjs_pasangan: '',
+    nama_bank_pasangan: '',
+    no_rekening_pasangan: '',
+    nama_anak: '',
+    tgl_lahir_anak: '',
+    no_tlp_anak: '',
+    no_ktp_anak: '',
+    no_bpjs_anak: '',
+    nama_bank_anak: '',
+    no_rekening_anak: '',
   });
   const onFormChange = (e) => {
     e.preventDefault();
@@ -70,22 +70,22 @@ export default () => {
     try {
       e.preventDefault();
       await axios({
-        method: "POST",
+        method: 'POST',
         url: `${host}/users/super/pengkinian-data`,
         data: dataForm,
       });
       Swal.fire({
-        icon: "success",
-        title: "Record data success",
+        icon: 'success',
+        title: 'Record data success',
         showConfirmButton: false,
         timer: 1500,
       });
-      history.push("/");
+      history.push('/');
     } catch (err) {
-      let msg = "";
+      let msg = '';
       if (err.response) {
         if (Array.isArray(err.response.data.msg)) {
-          msg = err.response.data.msg.join("<br>");
+          msg = err.response.data.msg.join('<br>');
         } else {
           msg = err.response.data.msg;
         }
@@ -95,8 +95,8 @@ export default () => {
         msg = err.message;
       }
       Swal.fire({
-        icon: "error",
-        title: "Oops...",
+        icon: 'error',
+        title: 'Oops...',
         html: `${msg}`,
       });
     }
@@ -106,20 +106,20 @@ export default () => {
       <Navigation />
       <Container>
         <div style={{ marginTop: 50 }}>
-          <p style={{ textAlign: "center", fontWeight: "bold", fontSize: 30 }}>Update Data</p>
-          <p style={{ textAlign: "center" }}>Silahkan Melakukan Pengkinian Data melalui Link ini</p>
-          <p style={{ textAlign: "center", marginTop: -15 }}>
-            <a href={"https://forms.gle/7XLsMVPZYMkQewbs7"} target="_blank" rel="noopener noreferrer">
+          <p style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 30 }}>Update Data</p>
+          <p style={{ textAlign: 'center' }}>Silahkan Melakukan Pengkinian Data melalui Link ini</p>
+          <p style={{ textAlign: 'center', marginTop: -15 }}>
+            <a href={'https://forms.gle/7XLsMVPZYMkQewbs7'} target="_blank" rel="noopener noreferrer">
               https://forms.gle/7XLsMVPZYMkQewbs7
             </a>
           </p>
         </div>
         <div style={{ marginBottom: 50, marginTop: 50 }}>
-          <h3 style={{ fontWeight: "bold", marginBottom: 20 }}>Data Diri</h3>
+          <h3 style={{ fontWeight: 'bold', marginBottom: 20 }}>Data Diri</h3>
           <Form onSubmit={onFormSubmit}>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
-                Nama
+                Nama <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
                 <Form.Control type="text" placeholder="Nama" name="nama" onChange={onFormChange} />
@@ -127,7 +127,7 @@ export default () => {
             </Form.Group>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
-                Nomor Induk
+                NIP/NPP/NIK <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
                 <Form.Control type="text" placeholder="NIP / NPP / NIK" name="no_induk" onChange={onFormChange} />
@@ -135,15 +135,7 @@ export default () => {
             </Form.Group>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
-                Alamat Email
-              </Form.Label>
-              <Col sm="10">
-                <Form.Control type="email" placeholder="Alamat Email" name="email" onChange={onFormChange} />
-              </Col>
-            </Form.Group>
-            <Form.Group as={Row}>
-              <Form.Label column sm="2">
-                Tanggal Lahir
+                Tanggal Lahir <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
                 <Form.Control type="date" name="tgl_lahir" onChange={onFormChange} />
@@ -151,7 +143,7 @@ export default () => {
             </Form.Group>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
-                No KTP
+                No KTP <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
                 <Form.Control type="text" placeholder="No KTP" name="no_ktp" onChange={onFormChange} />
@@ -178,7 +170,7 @@ export default () => {
             </Form.Group>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
-                Satuan Kerja
+                Satuan Kerja <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col xs={5}>
                 <Form.Control placeholder="Satuan Kerja Saat Pensiun" name="satuan_kerja" onChange={onFormChange} />
@@ -189,15 +181,23 @@ export default () => {
             </Form.Group>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
-                No Telp Rumah
+                Alamat Email
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder="No Telp Rumah" name="no_telp" onChange={onFormChange} />
+                <Form.Control type="email" placeholder="Alamat Email" name="email" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
-                Alamat
+                No HP Pensiunan <span style={{ color: 'red' }}>*</span>
+              </Form.Label>
+              <Col sm="10">
+                <Form.Control type="text" placeholder="No HP Pensiunan" name="no_telp" onChange={onFormChange} />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row}>
+              <Form.Label column sm="2">
+                Alamat <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
                 <Form.Control type="text" placeholder="Alamat" name="alamat" onChange={onFormChange} />
@@ -224,7 +224,7 @@ export default () => {
                 <Form.Control placeholder="Provinsi" name="provinsi" onChange={onFormChange} />
               </Col>
             </Form.Group>
-            <h3 style={{ fontWeight: "bold", marginBottom: 20, marginTop: 40 }}>Data Istri / Suami</h3>
+            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>Data Istri / Suami</h3>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
                 Nama Istri / Suami
@@ -276,7 +276,7 @@ export default () => {
                 <Form.Control placeholder="No Rekening" name="no_rekening_pasangan" onChange={onFormChange} />
               </Col>
             </Form.Group>
-            <h3 style={{ fontWeight: "bold", marginBottom: 20, marginTop: 40 }}>Data anak yang masih dalam tanggungan</h3>
+            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>Data anak yang masih dalam tanggungan</h3>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
                 Nama Anak

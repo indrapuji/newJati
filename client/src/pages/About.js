@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { Container, Image } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
