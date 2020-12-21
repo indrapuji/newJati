@@ -148,7 +148,8 @@ export default () => {
                   <Card.Title>Manfaat Nilai Hidup</Card.Title>
                   <Card.Text>
                     Nilai Hidup dibayarkan kepada peserta,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar
-                    oleh Yayasan.{'                '}
+                    oleh Yayasan.
+                    <br />
                   </Card.Text>
                   <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
                   <Button variant="warning" block href="https://dev.trendcom.xyz/download?file=Permohonan%20Nilai%20Hidup.docx">
