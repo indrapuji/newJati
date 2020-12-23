@@ -131,7 +131,7 @@ export default () => {
                   <Button
                     variant="warning"
                     block
-                    href="https://dev.trendcom.xyz/download?file=Permohonan%20Santunan%20Kematian%20_%20Santunan%20Cacat.docx"
+                    href="https://dev.jatisejahtera.or.id/download?file=Permohonan%20Santunan%20Kematian%20_%20Santunan%20Cacat.docx"
                   >
                     lampiran
                   </Button>
@@ -152,7 +152,7 @@ export default () => {
                     <br />
                   </Card.Text>
                   <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
-                  <Button variant="warning" block href="https://dev.trendcom.xyz/download?file=Permohonan%20Nilai%20Hidup.docx">
+                  <Button variant="warning" block href="https://dev.jatisejahtera.or.id/download?file=Permohonan%20Nilai%20Hidup.docx">
                     lampiran
                   </Button>
                 </Card.Body>
@@ -171,7 +171,7 @@ export default () => {
                     lengkap dan benar oleh Yayasan.
                   </Card.Text>
                   <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
-                  <Button variant="warning" block href="https://dev.trendcom.xyz/download?file=Permohonan%20Bantuan%20Biaya%20Rawat%20Inap.docx">
+                  <Button variant="warning" block href="https://dev.jatisejahtera.or.id/download?file=Permohonan%20Bantuan%20Biaya%20Rawat%20Inap.docx">
                     lampiran
                   </Button>
                 </Card.Body>

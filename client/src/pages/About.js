@@ -30,7 +30,7 @@ export default () => {
           <p style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 30 }}>Company Profile</p>
 
           <div style={{ textAlign: 'center' }}>
-            <iframe src="https://app.trendcom.xyz/uploads/1608151324392-Jatinew.pdf" title="title" style={{ width: 700, height: 700 }}>
+            <iframe src="https://dev.jatisejahtera.or.id/uploads/1608151324392-Jatinew.pdf" title="title" style={{ width: 700, height: 700 }}>
               {/* Presss me: <a href="./resources/crayola.pdf">Download PDF</a> */}
             </iframe>
 
