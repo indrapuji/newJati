@@ -148,7 +148,7 @@ export default () => {
                   <Card.Title>Manfaat Nilai Hidup</Card.Title>
                   <Card.Text>
                     Nilai Hidup dibayarkan kepada peserta,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar
-                    oleh Yayasan.{'......................'}
+                    oleh Yayasan.{'                    '}
                     <br />
                   </Card.Text>
                   <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
