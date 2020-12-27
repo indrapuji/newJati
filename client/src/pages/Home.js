@@ -148,7 +148,7 @@ export default () => {
                   <Card.Title>Manfaat Nilai Hidup</Card.Title>
                   <Card.Text>
                     Nilai Hidup dibayarkan kepada peserta,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar
-                    oleh Yayasan.
+                    oleh Yayasan.{'......................'}
                     <br />
                   </Card.Text>
                   <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
@@ -171,7 +171,11 @@ export default () => {
                     lengkap dan benar oleh Yayasan.
                   </Card.Text>
                   <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
-                  <Button variant="warning" block href="https://dev.jatisejahtera.or.id/download?file=Permohonan%20Bantuan%20Biaya%20Rawat%20Inap.docx">
+                  <Button
+                    variant="warning"
+                    block
+                    href="https://dev.jatisejahtera.or.id/download?file=Permohonan%20Bantuan%20Biaya%20Rawat%20Inap.docx"
+                  >
                     lampiran
                   </Button>
                 </Card.Body>
