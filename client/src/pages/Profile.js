@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Row, Col, Image, Container, Form, Card, Button, Modal } from "react-bootstrap";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
-import { useHistory } from "react-router-dom";
-import axios from "axios";
-import Swal from "sweetalert2";
-import host from "../hooks/host";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { Row, Col, Image, Container, Form, Card, Button, Modal } from 'react-bootstrap';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import host from '../hooks/host';
 
 export default () => {
   // const host = "http://localhost:3001";
@@ -38,7 +38,7 @@ export default () => {
     claim_perumahans: {},
   });
   useEffect(() => {
-    if (!localStorage.token) history.push("/");
+    if (!localStorage.token) history.push('/');
     getProfileData();
     // eslint-disable-next-line
   }, [history]);
@@ -49,49 +49,49 @@ export default () => {
   const claimData = () => {
     let temp = {
       claim_kematians: {
-        status: "",
-        pesan: "",
-        bukti_tf: "",
+        status: '',
+        pesan: '',
+        bukti_tf: '',
       },
       claim_kesehatans: {
-        status: "",
-        pesan: "",
-        bukti_tf: "",
+        status: '',
+        pesan: '',
+        bukti_tf: '',
       },
       claim_nilai_hidups: {
-        status: "",
-        pesan: "",
-        bukti_tf: "",
+        status: '',
+        pesan: '',
+        bukti_tf: '',
       },
       claim_pendidikans: {
-        status: "",
-        pesan: "",
-        bukti_tf: "",
+        status: '',
+        pesan: '',
+        bukti_tf: '',
       },
       claim_perumahans: {
-        status: "",
-        pesan: "",
-        bukti_tf: "",
+        status: '',
+        pesan: '',
+        bukti_tf: '',
       },
     };
     for (let keys in dataPengajuan) {
       if (profileData[keys][0]) {
         if (profileData[keys][0].pesan_claim) temp[keys].pesan = profileData[keys][0].pesan_claim.pesan;
         if (profileData[keys][0].bukti_tf) temp[keys].bukti_tf = profileData[keys][0].bukti_tf;
-        if (profileData[keys][0].status === "1") {
+        if (profileData[keys][0].status === '1') {
           temp[keys].status = `Checking Staff`;
-        } else if (profileData[keys][0].status === "2") {
+        } else if (profileData[keys][0].status === '2') {
           temp[keys].status = `Proses Pencairan`;
-        } else if (profileData[keys][0].status === "3") {
+        } else if (profileData[keys][0].status === '3') {
           temp[keys].status = `Pencairan Berhasil`;
-        } else if (profileData[keys][0].status === "4") {
+        } else if (profileData[keys][0].status === '4') {
           temp[keys].status = `Checking Finance`;
-        } else if (profileData[keys][0].status === "5") {
+        } else if (profileData[keys][0].status === '5') {
           temp[keys].status = `Verified`;
-        } else if (profileData[keys][0].status === "0") {
+        } else if (profileData[keys][0].status === '0') {
           temp[keys].status = `Ditolak`;
         }
-      } else temp[keys].status = "-";
+      } else temp[keys].status = '-';
     }
     setDataPengajuan(temp);
   };
@@ -99,7 +99,7 @@ export default () => {
   const getProfileData = async () => {
     try {
       const { data } = await axios({
-        method: "GET",
+        method: 'GET',
         url: `${host}/users/profile`,
         headers: {
           token: localStorage.token,
@@ -107,10 +107,10 @@ export default () => {
       });
       setProfileData(data);
     } catch (err) {
-      let msg = "";
+      let msg = '';
       if (err.response) {
         if (Array.isArray(err.response.data.msg)) {
-          msg = err.response.data.msg.join("<br>");
+          msg = err.response.data.msg.join('<br>');
         } else {
           msg = err.response.data.msg;
         }
@@ -120,81 +120,81 @@ export default () => {
         msg = err.message;
       }
       Swal.fire({
-        icon: "error",
-        title: "Oops...",
+        icon: 'error',
+        title: 'Oops...',
         html: `${msg}`,
       });
     }
   };
   function handdleLogout() {
     Swal.fire({
-      title: "Logout?",
-      text: "Yakin ingin logout!",
-      icon: "warning",
+      title: 'Logout?',
+      text: 'Yakin ingin logout!',
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Iya",
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Iya',
     }).then((result) => {
       if (result.isConfirmed) {
-        localStorage.removeItem("token");
-        history.push("/");
+        localStorage.removeItem('token');
+        history.push('/');
       }
     });
   }
   function handdleKematian() {
-    history.push("/claim/kematian");
+    history.push('/claim/kematian');
   }
   function handdleManfaat() {
-    history.push("/claim/manfaat");
+    history.push('/claim/manfaat');
   }
   function handdleKesehatan() {
-    history.push("/claim/kesehatan");
+    history.push('/claim/kesehatan');
   }
   function handdlePerumahan() {
-    history.push("/claim/perumahan");
+    history.push('/claim/perumahan');
   }
   function handdlePendidikan() {
-    history.push("/claim/pendidikan");
+    history.push('/claim/pendidikan');
   }
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
       <Navigation />
       {/* {JSON.stringify(dataPengajuan)} */}
       {/* {JSON.stringify(dataPengajuan.claim_kematians.bukti_tf)} */}
-      <h1 style={{ textAlign: "center", marginTop: 20, marginBottom: 50 }}>User Profile</h1>
+      <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 50 }}>User Profile</h1>
       <Container>
-        <div style={{ display: "flex", marginBottom: 20 }}>
-          <div style={{ width: "20rem", marginTop: 20, marginLeft: 5, marginRight: 5 }}>
+        <div style={{ display: 'flex', marginBottom: 20 }}>
+          <div style={{ width: '25rem', marginTop: 20, marginLeft: 5, marginRight: 5 }}>
             <Card
               border={
-                dataPengajuan.claim_kematians.status === "-"
-                  ? "secondary"
-                  : dataPengajuan.claim_kematians.status === "Ditolak"
-                  ? "danger"
-                  : dataPengajuan.claim_kematians.status === "Verified"
-                  ? "success"
-                  : "primary"
+                dataPengajuan.claim_kematians.status === '-'
+                  ? 'secondary'
+                  : dataPengajuan.claim_kematians.status === 'Ditolak'
+                  ? 'danger'
+                  : dataPengajuan.claim_kematians.status === 'Verified'
+                  ? 'success'
+                  : 'primary'
               }
             >
               <Card.Body>
-                <Card.Title style={{ textAlign: "center", marginBottom: 20, fontSize: 13 }}>Santunan Kematian</Card.Title>
-                <Card.Subtitle className="mb-2 " style={{ textAlign: "center", fontWeight: "bold" }}>
+                <Card.Title style={{ textAlign: 'center', marginBottom: 20, fontSize: 13 }}>Santunan Kematian</Card.Title>
+                <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
                   {dataPengajuan.claim_kematians.status}
                 </Card.Subtitle>
                 {dataPengajuan.claim_kematians.bukti_tf && (
-                  <Card.Subtitle className="mb-2 " style={{ textAlign: "center", fontWeight: "bold" }}>
-                    <Image src={dataPengajuan.claim_kematians.bukti_tf} style={{ width: 100, cursor: "pointer" }} onClick={() => setShow(true)} />
+                  <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                    <Image src={dataPengajuan.claim_kematians.bukti_tf} style={{ width: 100, cursor: 'pointer' }} onClick={() => setShow(true)} />
                   </Card.Subtitle>
                 )}
               </Card.Body>
             </Card>
             <div style={{ marginTop: 5 }}>
-              {dataPengajuan.claim_kematians.status === "-" ? (
+              {dataPengajuan.claim_kematians.status === '-' ? (
                 <Button variant="outline-success" block size="sm" onClick={handdleKematian}>
                   Ajukan
                 </Button>
-              ) : dataPengajuan.claim_kematians.status === "Ditolak" ? (
+              ) : dataPengajuan.claim_kematians.status === 'Ditolak' ? (
                 <Button variant="outline-warning" block size="sm">
                   Ajukan Kembali
                 </Button>
@@ -205,37 +205,37 @@ export default () => {
               )}
             </div>
           </div>
-          <div style={{ width: "20rem", marginTop: 20, marginLeft: 5, marginRight: 5 }}>
+          <div style={{ width: '25rem', marginTop: 20, marginLeft: 5, marginRight: 5 }}>
             <Card
               border={
-                dataPengajuan.claim_kesehatans.status === "-"
-                  ? "secondary"
-                  : dataPengajuan.claim_kesehatans.status === "Ditolak"
-                  ? "danger"
-                  : dataPengajuan.claim_kesehatans.status === "Verified"
-                  ? "success"
-                  : "primary"
+                dataPengajuan.claim_kesehatans.status === '-'
+                  ? 'secondary'
+                  : dataPengajuan.claim_kesehatans.status === 'Ditolak'
+                  ? 'danger'
+                  : dataPengajuan.claim_kesehatans.status === 'Verified'
+                  ? 'success'
+                  : 'primary'
               }
             >
               <Card.Body>
-                <Card.Title style={{ textAlign: "center", marginBottom: 20, fontSize: 13 }}>Santunan Kesehatan</Card.Title>
-                <Card.Subtitle className="mb-2 " style={{ textAlign: "center", fontWeight: "bold" }}>
+                <Card.Title style={{ textAlign: 'center', marginBottom: 20, fontSize: 13 }}>Santunan Kesehatan</Card.Title>
+                <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
                   {dataPengajuan.claim_kesehatans.status}
                 </Card.Subtitle>
                 {dataPengajuan.claim_kesehatans.bukti_tf && (
-                  <Card.Subtitle className="mb-2 " style={{ textAlign: "center", fontWeight: "bold" }}>
-                    <Image src={dataPengajuan.claim_kesehatans.bukti_tf} style={{ width: 100, cursor: "pointer" }}  onClick={() => setView(true)} />
+                  <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                    <Image src={dataPengajuan.claim_kesehatans.bukti_tf} style={{ width: 100, cursor: 'pointer' }} onClick={() => setView(true)} />
                   </Card.Subtitle>
                 )}
                 <Card.Text></Card.Text>
               </Card.Body>
             </Card>
             <div style={{ marginTop: 5 }}>
-              {dataPengajuan.claim_kesehatans.status === "-" ? (
+              {dataPengajuan.claim_kesehatans.status === '-' ? (
                 <Button variant="outline-success" block size="sm" onClick={handdleKesehatan}>
                   Ajukan
                 </Button>
-              ) : dataPengajuan.claim_kesehatans.status === "Ditolak" ? (
+              ) : dataPengajuan.claim_kesehatans.status === 'Ditolak' ? (
                 <Button variant="outline-warning" block size="sm">
                   Ajukan Kembali
                 </Button>
@@ -246,37 +246,37 @@ export default () => {
               )}
             </div>
           </div>
-          <div style={{ width: "20rem", marginTop: 20, marginLeft: 5, marginRight: 5 }}>
+          <div style={{ width: '25rem', marginTop: 20, marginLeft: 5, marginRight: 5 }}>
             <Card
               border={
-                dataPengajuan.claim_nilai_hidups.status === "-"
-                  ? "secondary"
-                  : dataPengajuan.claim_nilai_hidups.status === "Ditolak"
-                  ? "danger"
-                  : dataPengajuan.claim_nilai_hidups.status === "Verified"
-                  ? "success"
-                  : "primary"
+                dataPengajuan.claim_nilai_hidups.status === '-'
+                  ? 'secondary'
+                  : dataPengajuan.claim_nilai_hidups.status === 'Ditolak'
+                  ? 'danger'
+                  : dataPengajuan.claim_nilai_hidups.status === 'Verified'
+                  ? 'success'
+                  : 'primary'
               }
             >
               <Card.Body>
-                <Card.Title style={{ textAlign: "center", marginBottom: 20, fontSize: 13 }}>Santunan Nilai Hidup</Card.Title>
-                <Card.Subtitle className="mb-2 " style={{ textAlign: "center", fontWeight: "bold" }}>
+                <Card.Title style={{ textAlign: 'center', marginBottom: 20, fontSize: 13 }}>Santunan Nilai Hidup</Card.Title>
+                <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
                   {dataPengajuan.claim_nilai_hidups.status}
                 </Card.Subtitle>
                 {dataPengajuan.claim_nilai_hidups.bukti_tf && (
-                  <Card.Subtitle className="mb-2 " style={{ textAlign: "center", fontWeight: "bold" }}>
-                    <Image src={dataPengajuan.claim_nilai_hidups.bukti_tf} style={{ width: 100, cursor: "pointer" }}  onClick={() => setLook(true)} />
+                  <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                    <Image src={dataPengajuan.claim_nilai_hidups.bukti_tf} style={{ width: 100, cursor: 'pointer' }} onClick={() => setLook(true)} />
                   </Card.Subtitle>
                 )}
                 <Card.Text></Card.Text>
               </Card.Body>
             </Card>
             <div style={{ marginTop: 5 }}>
-              {dataPengajuan.claim_nilai_hidups.status === "-" ? (
+              {dataPengajuan.claim_nilai_hidups.status === '-' ? (
                 <Button variant="outline-success" block size="sm" onClick={handdleManfaat}>
                   Ajukan
                 </Button>
-              ) : dataPengajuan.claim_nilai_hidups.status === "Ditolak" ? (
+              ) : dataPengajuan.claim_nilai_hidups.status === 'Ditolak' ? (
                 <Button variant="outline-warning" block size="sm">
                   Ajukan Kembali
                 </Button>
@@ -287,7 +287,7 @@ export default () => {
               )}
             </div>
           </div>
-          <div style={{ width: "20rem", marginTop: 20, marginLeft: 5, marginRight: 5 }}>
+          {/* <div style={{ width: "20rem", marginTop: 20, marginLeft: 5, marginRight: 5 }}>
             <Card
               border={
                 dataPengajuan.claim_perumahans.status === "-"
@@ -368,7 +368,7 @@ export default () => {
                 </Button>
               )}
             </div>
-          </div>
+          </div> */}
         </div>
         <div style={{ marginBottom: 50 }}>
           {dataPengajuan.claim_kematians.pesan && (
@@ -425,9 +425,9 @@ export default () => {
         <Row>
           <Col>
             <div style={{ marginBottom: 20 }}>
-              <Image src={require("../assets/image/default-profile.jpg")} roundedCircle />
+              <Image src={require('../assets/image/default-profile.jpg')} roundedCircle />
             </div>
-            <Card style={{ width: "20rem", marginTop: 20 }}>
+            <Card style={{ width: '20rem', marginTop: 20 }}>
               <Button variant="primary" size="lg" type="submit" block onClick={handdleLogout}>
                 Logout
               </Button>
