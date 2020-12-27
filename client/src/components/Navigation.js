@@ -21,7 +21,7 @@ export default () => {
         <Navbar.Collapse className="justify-content-around">
           <Link to="/">Home</Link>
           <NavDropdown title="Pembaharuan">
-            <NavDropdown.Item href="https://jatisejahtera-cms.vercel.app/" style={{ color: 'blue' }}>
+            <NavDropdown.Item href="https://cms.jatisejahtera.or.id/login" style={{ color: 'blue' }}>
               Admin
             </NavDropdown.Item>
           </NavDropdown>
