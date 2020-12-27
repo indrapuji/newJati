@@ -151,11 +151,15 @@ export default () => {
   function handdleKesehatan() {
     history.push('/claim/kesehatan');
   }
-  function handdlePerumahan() {
-    history.push('/claim/perumahan');
-  }
-  function handdlePendidikan() {
-    history.push('/claim/pendidikan');
+  // function handdlePerumahan() {
+  //   history.push('/claim/perumahan');
+  // }
+  // function handdlePendidikan() {
+  //   history.push('/claim/pendidikan');
+  // }
+
+  function handdleUpdate() {
+    history.push('/profile/update');
   }
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
@@ -425,8 +429,13 @@ export default () => {
         <Row>
           <Col>
             <div style={{ marginBottom: 20 }}>
-              <Image src={require('../assets/image/default-profile.jpg')} roundedCircle />
+              <Image src={require('../assets/image/logo.png')} roundedCircle style={{ width: 300, height: 300 }} />
             </div>
+            <Card style={{ width: '20rem', marginTop: 20 }}>
+              <Button variant="warning" size="lg" type="submit" block onClick={() => handdleUpdate()}>
+                Update Profile
+              </Button>
+            </Card>
             <Card style={{ width: '20rem', marginTop: 20 }}>
               <Button variant="primary" size="lg" type="submit" block onClick={handdleLogout}>
                 Logout

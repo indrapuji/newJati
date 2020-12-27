@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Berita,
   Contact,
@@ -18,12 +18,13 @@ import {
   Claim,
   FormLogin,
   New,
-} from "./pages";
-import { ClaimKematian, ClaimKesehatan, ClaimManfaat, ClaimPendidikan, ClaimPerumahan } from "./pages/claimPage";
-import { RealisasiKesehatan, RealisasiPendidikan, RealisasiPerumahan, RealisasiSosial } from "./pages";
-import { Switch, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import ScrollToTop from "./pages/ScrollToTop";
+  UpdateProfile,
+} from './pages';
+import { ClaimKematian, ClaimKesehatan, ClaimManfaat, ClaimPendidikan, ClaimPerumahan } from './pages/claimPage';
+import { RealisasiKesehatan, RealisasiPendidikan, RealisasiPerumahan, RealisasiSosial } from './pages';
+import { Switch, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import ScrollToTop from './pages/ScrollToTop';
 
 function App() {
   const location = useLocation();
@@ -103,6 +104,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route exact path="/profile/update">
+            <UpdateProfile />
           </Route>
           <Route path="/profile">
             <Profile />
