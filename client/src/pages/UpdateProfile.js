@@ -396,7 +396,7 @@ export default () => {
               </Col>
             </Form.Group>
             <Button variant="primary" size="lg" type="submit" block>
-              Kirim
+              Update
             </Button>
           </Form>
         </div>
