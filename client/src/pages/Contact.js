@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { Container, Col, Form, Row, Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
 
 export default () => {
   const pageTransition = {
@@ -17,6 +18,14 @@ export default () => {
       opacity: 0,
     },
   };
+  const swal = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'message has been send',
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
 
   function sendEmail(e) {
     e.preventDefault();
@@ -24,6 +33,7 @@ export default () => {
     emailjs.sendForm('service_jk7yd8e', 'template_wsowez2', e.target, 'user_m5KIGFfT4P9UmB2N2qOA7').then(
       (result) => {
         console.log(result.text);
+        swal();
       },
       (error) => {
         console.log(error.text);
