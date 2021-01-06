@@ -1,10 +1,10 @@
-import React from "react";
-import Navigation from "../components/Navigation";
-import { CardDeck, Card, Button } from "react-bootstrap";
-import CarauselCard from "../components/CarauselCard";
-import Footer from "../components/Footer";
-import { motion } from "framer-motion";
-import { useHistory } from "react-router-dom";
+import React from 'react';
+import Navigation from '../components/Navigation';
+import { CardDeck, Card, Button } from 'react-bootstrap';
+import CarauselCard from '../components/CarauselCard';
+import Footer from '../components/Footer';
+import { motion } from 'framer-motion';
+import { useHistory } from 'react-router-dom';
 
 export default () => {
   const history = useHistory();
@@ -20,20 +20,14 @@ export default () => {
     },
   };
   function handdleKematian() {
-    history.push("/claim/kematian");
+    history.push('/claim/kematian');
   }
   function handdleManfaat() {
-    history.push("/claim/manfaat");
+    history.push('/claim/manfaat');
   }
   function handdleKesehatan() {
-    history.push("/claim/kesehatan");
+    history.push('/claim/kesehatan');
   }
-  // function handdlePerumahan() {
-  //   history.push("/claim/perumahan");
-  // }
-  // function handdlePendidikan() {
-  //   history.push("/claim/pendidikan");
-  // }
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
       <Navigation />
@@ -43,7 +37,10 @@ export default () => {
           <Card>
             <Card.Body>
               <Card.Title>Santunan Kematian</Card.Title>
-              <Card.Text>Santunan kematian dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar oleh Yayasan.</Card.Text>
+              <Card.Text>
+                Santunan kematian dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan
+                benar oleh Yayasan.
+              </Card.Text>
             </Card.Body>
             <Card.Footer>
               <Button variant="success" block onClick={handdleKematian}>
@@ -54,7 +51,10 @@ export default () => {
           <Card>
             <Card.Body>
               <Card.Title>Nilai Hidup</Card.Title>
-              <Card.Text>Nilai Hidup dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar oleh Yayasan.</Card.Text>
+              <Card.Text>
+                Nilai Hidup dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar
+                oleh Yayasan.
+              </Card.Text>
             </Card.Body>
             <Card.Footer>
               <Button variant="success" block onClick={handdleManfaat}>
@@ -65,7 +65,10 @@ export default () => {
           <Card>
             <Card.Body>
               <Card.Title>Bantuan Rawat Inap</Card.Title>
-              <Card.Text>Penggantian Biaya Rawat Inap dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar oleh Yayasan.</Card.Text>
+              <Card.Text>
+                Penggantian Biaya Rawat Inap dibayarkan kepada ahli waris,selambat-lambatnya 14 hari kerja setelah berkas pengajuan diterima dengan
+                lengkap dan benar oleh Yayasan.
+              </Card.Text>
             </Card.Body>
             <Card.Footer>
               <Button variant="success" block onClick={handdleKesehatan}>
@@ -73,28 +76,6 @@ export default () => {
               </Button>
             </Card.Footer>
           </Card>
-          {/* <Card>
-            <Card.Body>
-              <Card.Title>Claim Perumahan</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias</Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <Button variant="success" block onClick={handdlePerumahan}>
-                Pengajuan
-              </Button>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Body>
-              <Card.Title>Claim Pendidikan</Card.Title>
-              <Card.Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias</Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <Button variant="success" block onClick={handdlePendidikan}>
-                Pengajuan
-              </Button>
-            </Card.Footer>
-          </Card> */}
         </CardDeck>
       </div>
       <Footer />

@@ -16,11 +16,9 @@ import Santunan from '../assets/image/santunan.jpeg';
 import { Link, useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Visimisi from '../components/Visimisi';
-// import Profile from "../components/Profile";
 import Berita from '../components/Berita';
 import '../page.css';
 import Aos from 'aos';
-// import "aos/dist/aos.css";
 
 export default () => {
   const history = useHistory();
@@ -244,7 +242,6 @@ export default () => {
         <div data-aos="zoom-in">
           <Card style={{ borderRadius: 20, marginLeft: 350, marginRight: 350, marginBottom: 50 }}>
             <Card.Body>
-              {/* <Card.Img variant="top" src={Rawat} style={{ height: "10rem" }} /> */}
               <Card.Title style={{ textAlign: 'center' }}>Perbaharui Data Peserta</Card.Title>
               <Card.Text style={{ textAlign: 'center' }}>Perbaharui data anda sekarang</Card.Text>
             </Card.Body>

@@ -47,40 +47,47 @@ export default () => {
         <p style={{ fontWeight: 'bold', textAlign: 'center', fontSize: 50 }}>Hubungi Kami</p>
         <Form onSubmit={sendEmail}>
           <Form.Group as={Row}>
-            <Form.Label column sm={2}>
+            <Form.Label column sm={3}>
               Nama
             </Form.Label>
-            <Col sm={10}>
+            <Col sm={9}>
               <Form.Control type="text" placeholder="Nama" name="nama" />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
-            <Form.Label column sm={2}>
+            <Form.Label column sm={3}>
               Alamat
             </Form.Label>
-            <Col sm={10}>
+            <Col sm={9}>
               <Form.Control as="textarea" rows="3" placeholder="Alamat" name="alamat" />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
-            <Form.Label column sm={2}>
+            <Form.Label column sm={3}>
               Telpon
             </Form.Label>
-            <Col sm={10}>
+            <Col sm={9}>
               <Form.Control type="text" placeholder="Telpon" name="telepon" />
             </Col>
           </Form.Group>
-          <Form.Group as={Row} controlId="formHorizontalEmail">
-            <Form.Label column sm={2}>
+          <Form.Group as={Row}>
+            <Form.Label column sm={3}>
               Email
             </Form.Label>
-            <Col sm={10}>
+            <Col sm={9}>
               <Form.Control type="email" placeholder="Email" name="email" />
             </Col>
           </Form.Group>
-
           <Form.Group as={Row}>
-            <Col sm={{ span: 10, offset: 2 }}>
+            <Form.Label column sm={3}>
+              Yang ingin disampaikan / tanyakan
+            </Form.Label>
+            <Col sm={9}>
+              <Form.Control type="textarea" placeholder="Pertanyaan" name="pertanyaan" />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row}>
+            <Col sm={{ span: 1, offset: 11 }}>
               <Button type="submit">Kirim</Button>
             </Col>
           </Form.Group>

@@ -9,10 +9,6 @@ import Swal from 'sweetalert2';
 import host from '../hooks/host';
 
 export default () => {
-  // const host = "http://localhost:3001";
-  // const host = "https://jatisejahtera-cms.herokuapp.com";
-  // const host = "http://128.199.238.147:3001";
-
   const [show, setShow] = useState(false);
   const [view, setView] = useState(false);
   const [look, setLook] = useState(false);
@@ -151,12 +147,6 @@ export default () => {
   function handdleKesehatan() {
     history.push('/claim/kesehatan');
   }
-  // function handdlePerumahan() {
-  //   history.push('/claim/perumahan');
-  // }
-  // function handdlePendidikan() {
-  //   history.push('/claim/pendidikan');
-  // }
 
   function handdleUpdate() {
     history.push('/profile/update');
@@ -164,8 +154,6 @@ export default () => {
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
       <Navigation />
-      {/* {JSON.stringify(dataPengajuan)} */}
-      {/* {JSON.stringify(dataPengajuan.claim_kematians.bukti_tf)} */}
       <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 50 }}>User Profile</h1>
       <Container>
         <div style={{ display: 'flex', marginBottom: 20 }}>
@@ -291,88 +279,6 @@ export default () => {
               )}
             </div>
           </div>
-          {/* <div style={{ width: "20rem", marginTop: 20, marginLeft: 5, marginRight: 5 }}>
-            <Card
-              border={
-                dataPengajuan.claim_perumahans.status === "-"
-                  ? "secondary"
-                  : dataPengajuan.claim_perumahans.status === "Ditolak"
-                  ? "danger"
-                  : dataPengajuan.claim_perumahans.status === "Verified"
-                  ? "success"
-                  : "primary"
-              }
-            >
-              <Card.Body>
-                <Card.Title style={{ textAlign: "center", marginBottom: 20, fontSize: 13 }}>Santunan Perumahan</Card.Title>
-                <Card.Subtitle className="mb-2 " style={{ textAlign: "center", fontWeight: "bold" }}>
-                  {dataPengajuan.claim_perumahans.status}
-                </Card.Subtitle>
-                {dataPengajuan.claim_perumahans.bukti_tf && (
-                  <Card.Subtitle className="mb-2 " style={{ textAlign: "center", fontWeight: "bold" }}>
-                    <Image src={dataPengajuan.claim_perumahans.bukti_tf} style={{ width: 100 }} />
-                  </Card.Subtitle>
-                )}
-                <Card.Text></Card.Text>
-              </Card.Body>
-            </Card>
-            <div style={{ marginTop: 5 }}>
-              {dataPengajuan.claim_perumahans.status === "-" ? (
-                <Button variant="outline-success" block size="sm" onClick={handdlePerumahan}>
-                  Ajukan
-                </Button>
-              ) : dataPengajuan.claim_perumahans.status === "Ditolak" ? (
-                <Button variant="outline-warning" block size="sm">
-                  Ajukan Kembali
-                </Button>
-              ) : (
-                <Button variant="outline-secondary" block size="sm" disabled>
-                  Disabled
-                </Button>
-              )}
-            </div>
-          </div>
-          <div style={{ width: "20rem", marginTop: 20, marginLeft: 5, marginRight: 5 }}>
-            <Card
-              border={
-                dataPengajuan.claim_pendidikans.status === "-"
-                  ? "secondary"
-                  : dataPengajuan.claim_pendidikans.status === "Ditolak"
-                  ? "danger"
-                  : dataPengajuan.claim_pendidikans.status === "Verified"
-                  ? "success"
-                  : "primary"
-              }
-            >
-              <Card.Body>
-                <Card.Title style={{ textAlign: "center", marginBottom: 20, fontSize: 13 }}>Santunan Pendidikan</Card.Title>
-                <Card.Subtitle className="mb-2" style={{ textAlign: "center", fontWeight: "bold" }}>
-                  {dataPengajuan.claim_pendidikans.status}
-                </Card.Subtitle>
-                {dataPengajuan.claim_pendidikans.bukti_tf && (
-                  <Card.Subtitle className="mb-2 " style={{ textAlign: "center", fontWeight: "bold" }}>
-                    <Image src={dataPengajuan.claim_pendidikans.bukti_tf} style={{ width: 100 }} />
-                  </Card.Subtitle>
-                )}
-                <Card.Text></Card.Text>
-              </Card.Body>
-            </Card>
-            <div style={{ marginTop: 5 }}>
-              {dataPengajuan.claim_pendidikans.status === "-" ? (
-                <Button variant="outline-success" block size="sm" onClick={handdlePendidikan}>
-                  Ajukan
-                </Button>
-              ) : dataPengajuan.claim_pendidikans.status === "Ditolak" ? (
-                <Button variant="outline-warning" block size="sm">
-                  Ajukan Kembali
-                </Button>
-              ) : (
-                <Button variant="outline-secondary" block size="sm" disabled>
-                  Disabled
-                </Button>
-              )}
-            </div>
-          </div> */}
         </div>
         <div style={{ marginBottom: 50 }}>
           {dataPengajuan.claim_kematians.pesan && (

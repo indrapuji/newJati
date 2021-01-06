@@ -4,7 +4,6 @@ import Footer from '../components/Footer';
 import { Container, Image } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import Kesehatan from '../assets/image/kesehatan2.jpg';
-// import TabelKesehatan from "../assets/image/tabel_kesehatan2.png";
 import SantunanKematian from '../assets/image/santunan_kematian.png';
 import SantunanNilaiHidup from '../assets/image/santunan_nilaihidup.png';
 import ManfaatKesehatan from '../assets/image/Ragam_manfaat.png';
@@ -80,7 +79,7 @@ export default () => {
           <Image src={SantunanNilaiHidup} rounded style={{ height: 100 }} />
         </div>
         <div data-aos="zoom-in" style={{ marginTop: 20 }}>
-          <Image src={SantunanKematian} rounded style={{ height: 100 }} />
+          <Image src={SantunanKematian} rounded style={{ height: 245 }} />
         </div>
         <div data-aos="flip-left" style={{ marginTop: 20 }}>
           <p>Mekanisme Pengajuan Penggantian Biaya</p>
@@ -109,8 +108,8 @@ export default () => {
         <div data-aos="flip-left" style={{ textAlign: 'center', marginTop: 50 }}>
           <p>SK Kesehatan No30KPTSYKP3JS-2020</p>
           <iframe
-            src="https://dev.jatisejahtera.or.id/uploads/SK Kesehatan No30KPTSYKP3JS2020.pdf"
-            title="title"
+            src="https://dev.jatisejahtera.or.id/uploads/SK Kesehatan No30KPTSYKP3JS2020_.pdf"
+            title="SK Kesehatan No30KPTSYKP3JS2020"
             style={{ width: 700, height: 700 }}
           ></iframe>
         </div>

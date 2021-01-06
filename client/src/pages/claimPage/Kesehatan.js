@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Button, Form, Container } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
-import axios from "axios";
-import Swal from "sweetalert2";
-import host from "../../hooks/host";
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Button, Form, Container } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import host from '../../hooks/host';
 
 export default () => {
-  // const host = "http://localhost:3001";
-  // const host = "https://jatisejahtera-cms.herokuapp.com";
-  // const host = "http://128.199.238.147:3001";
-
   const history = useHistory();
   const pageTransition = {
     init: {
@@ -26,24 +22,24 @@ export default () => {
   useEffect(() => {
     if (!localStorage.token) {
       Swal.fire({
-        icon: "error",
-        title: "Oops... Kamu harus login terlebih dahulu",
+        icon: 'error',
+        title: 'Oops... Kamu harus login terlebih dahulu',
         showConfirmButton: false,
         timer: 1500,
       });
-      history.push("/");
+      history.push('/');
     }
   }, [history]);
   function handdleBack() {
-    history.push("/");
+    history.push('/');
   }
   const [formData, setFormData] = useState({
-    surat_permohonan_bantuan_biaya: "",
-    kuitansi_asli_rs: "",
-    surat_keterangan_rs: "",
-    fotokopi_sk_pensiun: "",
-    fotokopi_kp: "",
-    lampiran: "",
+    surat_permohonan_bantuan_biaya: '',
+    kuitansi_asli_rs: '',
+    surat_keterangan_rs: '',
+    fotokopi_sk_pensiun: '',
+    fotokopi_kp: '',
+    lampiran: '',
   });
   const onFormChange = (e) => {
     e.preventDefault();
@@ -61,7 +57,7 @@ export default () => {
         newFormData.append(`${keys}`, formData[keys]);
       }
       await axios({
-        method: "POST",
+        method: 'POST',
         url: `${host}/data/uploads/kesehatan`,
         data: newFormData,
         headers: {
@@ -69,17 +65,17 @@ export default () => {
         },
       });
       Swal.fire({
-        icon: "success",
-        title: "Pengajuan Claim success",
+        icon: 'success',
+        title: 'Pengajuan Claim success',
         showConfirmButton: false,
         timer: 1500,
       });
-      history.push("/profile");
+      history.push('/profile');
     } catch (err) {
-      let msg = "";
+      let msg = '';
       if (err.response) {
         if (Array.isArray(err.response.data.msg)) {
-          msg = err.response.data.msg.join("<br>");
+          msg = err.response.data.msg.join('<br>');
         } else {
           msg = err.response.data.msg;
         }
@@ -89,15 +85,15 @@ export default () => {
         msg = err.message;
       }
       Swal.fire({
-        icon: "error",
-        title: "Oops...",
+        icon: 'error',
+        title: 'Oops...',
         html: `${msg}`,
       });
     }
   };
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
-      <h1 style={{ textAlign: "center", marginTop: 20, marginBottom: 20 }}>Pengajuan Claim Kesehatan</h1>
+      <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>Pengajuan Claim Kesehatan</h1>
       <Container>
         <Form onSubmit={onFormSubmit}>
           <Form.Group>
