@@ -126,15 +126,15 @@ export default () => {
                     dan benar oleh Yayasan.
                   </Card.Text>
                   <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
+                </Card.Body>
+                <Card.Footer>
                   <Button
                     variant="warning"
                     block
                     href="https://dev.jatisejahtera.or.id/download?file=Permohonan%20Santunan%20Kematian%20_%20Santunan%20Cacat.docx"
                   >
-                    lampiran
+                    Form Permohonan
                   </Button>
-                </Card.Body>
-                <Card.Footer>
                   <Button variant="success" block onClick={handdleKematian}>
                     Pengajuan
                   </Button>
@@ -150,11 +150,11 @@ export default () => {
                     <br />
                   </Card.Text>
                   <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
-                  <Button variant="warning" block href="https://dev.jatisejahtera.or.id/download?file=Permohonan%20Nilai%20Hidup.docx">
-                    lampiran
-                  </Button>
                 </Card.Body>
                 <Card.Footer>
+                  <Button variant="warning" block href="https://dev.jatisejahtera.or.id/download?file=Permohonan%20Nilai%20Hidup.docx">
+                    Form Permohonan
+                  </Button>
                   <Button variant="success" block onClick={handdleManfaat}>
                     Pengajuan
                   </Button>
@@ -169,15 +169,15 @@ export default () => {
                     lengkap dan benar oleh Yayasan.
                   </Card.Text>
                   <p style={{ fontSize: 10 }}>* lampiran pengajuan</p>
+                </Card.Body>
+                <Card.Footer>
                   <Button
                     variant="warning"
                     block
                     href="https://dev.jatisejahtera.or.id/download?file=Permohonan%20Bantuan%20Biaya%20Rawat%20Inap.docx"
                   >
-                    lampiran
+                    Form Permohonan
                   </Button>
-                </Card.Body>
-                <Card.Footer>
                   <Button variant="success" block onClick={handdleKesehatan}>
                     Pengajuan
                   </Button>
