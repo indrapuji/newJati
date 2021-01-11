@@ -98,9 +98,6 @@ function App() {
           <Route exact path="/claim/kacamata">
             <ClaimPendidikan />
           </Route>
-          <Route exact path="/claim/perumahan">
-            <ClaimPerumahan />
-          </Route>
           <Route path="/berita">
             <Berita />
           </Route>
