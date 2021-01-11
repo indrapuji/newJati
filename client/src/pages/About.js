@@ -28,7 +28,11 @@ export default () => {
         <div style={{ marginTop: 50 }}>
           <p style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 30 }}>Company Profile</p>
           <div style={{ textAlign: 'center' }}>
-            <iframe src="https://dev.jatisejahtera.or.id/uploads/Company Profile.pdf" title="title" style={{ width: 700, height: 700 }}></iframe>
+            <iframe
+              src="https://dev.jatisejahtera.or.id/uploads/Company_Profile.pdf"
+              title="title"
+              style={{ width: 700, height: 700 }}
+            ></iframe>
           </div>
         </div>
       </Container>
