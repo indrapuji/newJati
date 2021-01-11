@@ -79,7 +79,7 @@ export default () => {
       });
       Swal.fire({
         icon: 'success',
-        title: 'Pengajuan Claim success',
+        title: 'Pengajuan Claim Kacamata success',
         showConfirmButton: false,
         timer: 1500,
       });
