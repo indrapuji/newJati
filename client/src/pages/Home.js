@@ -7,7 +7,8 @@ import Sosial from '../assets/home/sosial.png';
 import Perumahan from '../assets/home/perumahan.png';
 import Kesehatan from '../assets/home/kesehatan.png';
 import Penanaman from '../assets/image/image-1.jpeg';
-import Rawat from '../assets/image/kacamata.png';
+import Rawat from '../assets/image/bantuanRawat.jpg';
+import Kacamata from '../assets/image/kacamata.png';
 import NilaiHidup from '../assets/image/nilaiHidup.jpg';
 import SantunanKematian from '../assets/image/santunanKematian.jpg';
 import BangunKemandirian from '../assets/image/image-2.jpeg';
@@ -248,7 +249,7 @@ export default () => {
               </Card>
               <Card style={{ borderRadius: 20 }}>
                 <Card.Body>
-                  <Card.Img variant="top" src={Rawat} style={{ height: '10rem' }} />
+                  <Card.Img variant="top" src={Kacamata} style={{ height: '10rem' }} />
                   <Card.Title>Bantuan Kacamata</Card.Title>
                   <Card.Text>
                     Penggantian Pembelian Kacamata dibayarkan kepada peserta,selambat-lambatnya 14
