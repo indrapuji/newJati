@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Button, Form, Container } from 'react-bootstrap';
+import { Button, Form, Container, Row, Col } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -34,11 +34,25 @@ export default () => {
     history.push('/');
   }
   const [formData, setFormData] = useState({
+    nama: '',
+    tgl_lahir: '',
+    no_induk: '',
+    satuan_kerja: '',
+    golongan_pangkat: '',
+    alamat: '',
+    kelurahan: '',
+    kecamatan: '',
+    kota: '',
+    kodepos: '',
+    provinsi: '',
+    no_telp: '',
+    kota_pensiun: '',
     data1: '',
     data2: '',
     data3: '',
     data4: '',
     data5: '',
+    lampiran: '',
   });
   const onFormChange = (e) => {
     e.preventDefault();
@@ -92,9 +106,123 @@ export default () => {
   };
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
-      <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>Pengajuan Claim Pendidikan</h1>
+      <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>
+        Pengajuan Claim Kacamata
+      </h1>
       <Container>
         <Form onSubmit={onFormSubmit}>
+          <Form.Group as={Row}>
+            <Form.Label column sm="2">
+              Nama <span style={{ color: 'red' }}>*</span>
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control type="text" placeholder="Nama" name="nama" onChange={onFormChange} />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row}>
+            <Form.Label column sm="2">
+              Tanggal Lahir <span style={{ color: 'red' }}>*</span>
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control type="date" name="tgl_lahir" onChange={onFormChange} />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row}>
+            <Form.Label column sm="2">
+              NIP/NPP/NIK <span style={{ color: 'red' }}>*</span>
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control
+                type="text"
+                placeholder="NIP / NPP / NIK"
+                name="no_induk"
+                onChange={onFormChange}
+              />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row}>
+            <Form.Label column sm="2">
+              Satuan Kerja <span style={{ color: 'red' }}>*</span>
+            </Form.Label>
+            <Col xs={5}>
+              <Form.Control
+                placeholder="Satuan Kerja Saat Pensiun"
+                name="satuan_kerja"
+                onChange={onFormChange}
+              />
+            </Col>
+            <Col>
+              <Form.Control
+                placeholder="Golongan Pangkat Saat Pensiun"
+                name="golongan_pangkat"
+                onChange={onFormChange}
+              />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row}>
+            <Form.Label column sm="2">
+              Alamat <span style={{ color: 'red' }}>*</span>
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control
+                type="text"
+                placeholder="Alamat"
+                name="alamat"
+                onChange={onFormChange}
+              />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row}>
+            <Form.Label column sm="2"></Form.Label>
+            <Col xs={5}>
+              <Form.Control
+                placeholder="Kelurahan / Desa"
+                name="kelurahan"
+                onChange={onFormChange}
+              />
+            </Col>
+            <Col>
+              <Form.Control placeholder="Kecamatan" name="kecamatan" onChange={onFormChange} />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row}>
+            <Form.Label column sm="2"></Form.Label>
+            <Col xs={4}>
+              <Form.Control placeholder="Kota / Kabupaten" name="kota" onChange={onFormChange} />
+            </Col>
+            <Col>
+              <Form.Control placeholder="Kodepos" name="kodepos" onChange={onFormChange} />
+            </Col>
+            <Col>
+              <Form.Control placeholder="Provinsi" name="provinsi" onChange={onFormChange} />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row}>
+            <Form.Label column sm="2">
+              No HP Pensiunan <span style={{ color: 'red' }}>*</span>
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control
+                type="text"
+                placeholder="No HP Pensiunan"
+                name="no_telp"
+                onChange={onFormChange}
+              />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row}>
+            <Form.Label column sm="2">
+              Kota Tempat Pensiun <span style={{ color: 'red' }}>*</span>
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control
+                type="text"
+                placeholder="Kota Tempat Pensiun"
+                name="kota_pensiun"
+                onChange={onFormChange}
+              />
+            </Col>
+          </Form.Group>
           <Form.Group>
             <Form.Label>File 1</Form.Label>
             <Form.File.Input custom name="data1" onChange={onFormChange} />
@@ -114,6 +242,10 @@ export default () => {
           <Form.Group>
             <Form.Label>File 5</Form.Label>
             <Form.File.Input custom name="data5" onChange={onFormChange} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Lampiran </Form.Label>
+            <Form.File.Input name="lampiran" onChange={onFormChange} />
           </Form.Group>
           <Button variant="success" onClick={handdleBack} block>
             Back
