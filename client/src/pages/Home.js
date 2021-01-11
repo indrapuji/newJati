@@ -249,7 +249,7 @@ export default () => {
               <Card style={{ borderRadius: 20 }}>
                 <Card.Body>
                   <Card.Img variant="top" src={Rawat} style={{ height: '10rem' }} />
-                  <Card.Title>Claim Kacamata</Card.Title>
+                  <Card.Title>Bantuan Kacamata</Card.Title>
                   <Card.Text>
                     Penggantian Pembelian Kacamata dibayarkan kepada peserta,selambat-lambatnya 14
                     hari kerja setelah berkas pengajuan diterima dengan lengkap dan benar oleh

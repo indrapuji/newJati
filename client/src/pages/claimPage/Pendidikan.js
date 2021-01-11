@@ -106,9 +106,7 @@ export default () => {
   };
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
-      <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>
-        Pengajuan Claim Kacamata
-      </h1>
+      <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>Bantuan Kacamata</h1>
       <Container>
         <Form onSubmit={onFormSubmit}>
           <Form.Group as={Row}>

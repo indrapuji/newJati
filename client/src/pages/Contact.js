@@ -30,15 +30,17 @@ export default () => {
   function sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_jk7yd8e', 'template_wsowez2', e.target, 'user_m5KIGFfT4P9UmB2N2qOA7').then(
-      (result) => {
-        console.log(result.text);
-        swal();
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+    emailjs
+      .sendForm('service_jk7yd8e', 'template_wsowez2', e.target, 'user_m5KIGFfT4P9UmB2N2qOA7')
+      .then(
+        (result) => {
+          console.log(result.text);
+          swal();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   }
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
@@ -103,27 +105,40 @@ export default () => {
               <p style={{ marginBottom: 0, fontSize: 13 }}>62.21.5252983</p>
               <p style={{ marginBottom: 0, fontSize: 13 }}>Email :</p>
               <p style={{ marginBottom: 0, fontSize: 13 }}>yayasanjatisejahtera@yahoo.co.id</p>
+              <p style={{ marginBottom: 0, fontSize: 13 }}>admin@jatisejahtera.or.id</p>
             </Col>
           </Row>
         </div>
         <div style={{ marginBottom: 50 }}>
           <Row>
             <Col>
-              <p style={{ fontWeight: 'bold', fontSize: 15, marginBottom: 5 }}>KANTOR PERWAKILAN YKP3.JS JAWA BARAT</p>
+              <p style={{ fontWeight: 'bold', fontSize: 15, marginBottom: 5 }}>
+                KANTOR PERWAKILAN YKP3.JS JAWA BARAT
+              </p>
               <p style={{ marginBottom: 0, fontSize: 13 }}>D/A KANTOR PERHUTANI</p>
-              <p style={{ marginBottom: 0, fontSize: 13 }}>JL.SOEKARNO HATTA NO. 628 KM.14 BANDUNG 40292.</p>
+              <p style={{ marginBottom: 0, fontSize: 13 }}>
+                JL.SOEKARNO HATTA NO. 628 KM.14 BANDUNG 40292.
+              </p>
               <p style={{ marginBottom: 0, fontSize: 13 }}>TLP. 62.22. 7802792 </p>
             </Col>
             <Col>
-              <p style={{ fontWeight: 'bold', fontSize: 15, marginBottom: 5 }}>KANTOR PERWAKILAN YKP3.JS JAWA TENGAH</p>
+              <p style={{ fontWeight: 'bold', fontSize: 15, marginBottom: 5 }}>
+                KANTOR PERWAKILAN YKP3.JS JAWA TENGAH
+              </p>
               <p style={{ marginBottom: 0, fontSize: 13 }}>D/A KANTOR PERHUTANI</p>
-              <p style={{ marginBottom: 0, fontSize: 13 }}>JL.PAHLAWAN NO. 15 - 17 SEMARANG 50243</p>
+              <p style={{ marginBottom: 0, fontSize: 13 }}>
+                JL.PAHLAWAN NO. 15 - 17 SEMARANG 50243
+              </p>
               <p style={{ marginBottom: 0, fontSize: 13 }}>TLP. 62.24 8413631</p>
             </Col>
             <Col>
-              <p style={{ fontWeight: 'bold', fontSize: 15, marginBottom: 5 }}>KANTOR PERWAKILAN YKP3.JS JAWA TIMUR</p>
+              <p style={{ fontWeight: 'bold', fontSize: 15, marginBottom: 5 }}>
+                KANTOR PERWAKILAN YKP3.JS JAWA TIMUR
+              </p>
               <p style={{ marginBottom: 0, fontSize: 13 }}>D/A KANTOR PERHUTANI</p>
-              <p style={{ marginBottom: 0, fontSize: 13 }}>JL.GENTENG KALI NO. 49 SURABAYA 60008.</p>
+              <p style={{ marginBottom: 0, fontSize: 13 }}>
+                JL.GENTENG KALI NO. 49 SURABAYA 60008.
+              </p>
               <p style={{ marginBottom: 0, fontSize: 13 }}>TLP. 62.31 5343881</p>
             </Col>
           </Row>
