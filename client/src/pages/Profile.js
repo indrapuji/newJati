@@ -149,7 +149,7 @@ export default () => {
     history.push('/claim/kesehatan');
   }
   function handdleKacamata() {
-    history.push('/claim/pendidikan');
+    history.push('/claim/kacamata');
   }
   function handdleUpdate() {
     history.push('/profile/update');

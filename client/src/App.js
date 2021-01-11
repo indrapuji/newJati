@@ -20,8 +20,19 @@ import {
   New,
   UpdateProfile,
 } from './pages';
-import { ClaimKematian, ClaimKesehatan, ClaimManfaat, ClaimPendidikan, ClaimPerumahan } from './pages/claimPage';
-import { RealisasiKesehatan, RealisasiPendidikan, RealisasiPerumahan, RealisasiSosial } from './pages';
+import {
+  ClaimKematian,
+  ClaimKesehatan,
+  ClaimManfaat,
+  ClaimPendidikan,
+  ClaimPerumahan,
+} from './pages/claimPage';
+import {
+  RealisasiKesehatan,
+  RealisasiPendidikan,
+  RealisasiPerumahan,
+  RealisasiSosial,
+} from './pages';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import ScrollToTop from './pages/ScrollToTop';
@@ -90,7 +101,7 @@ function App() {
           <Route exact path="/claim/manfaat">
             <ClaimManfaat />
           </Route>
-          <Route exact path="/claim/pendidikan">
+          <Route exact path="/claim/kacamata">
             <ClaimPendidikan />
           </Route>
           <Route exact path="/claim/perumahan">
