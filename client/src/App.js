@@ -20,13 +20,7 @@ import {
   New,
   UpdateProfile,
 } from './pages';
-import {
-  ClaimKematian,
-  ClaimKesehatan,
-  ClaimManfaat,
-  ClaimPendidikan,
-  ClaimPerumahan,
-} from './pages/claimPage';
+import { ClaimKematian, ClaimKesehatan, ClaimManfaat, ClaimPendidikan } from './pages/claimPage';
 import {
   RealisasiKesehatan,
   RealisasiPendidikan,
