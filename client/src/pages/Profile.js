@@ -72,7 +72,8 @@ export default () => {
     };
     for (let keys in dataPengajuan) {
       if (profileData[keys][0]) {
-        if (profileData[keys][0].pesan_claim) temp[keys].pesan = profileData[keys][0].pesan_claim.pesan;
+        if (profileData[keys][0].pesan_claim)
+          temp[keys].pesan = profileData[keys][0].pesan_claim.pesan;
         if (profileData[keys][0].bukti_tf) temp[keys].bukti_tf = profileData[keys][0].bukti_tf;
         if (profileData[keys][0].status === '1') {
           temp[keys].status = `Checking Staff`;
@@ -147,7 +148,9 @@ export default () => {
   function handdleKesehatan() {
     history.push('/claim/kesehatan');
   }
-
+  function handdleKacamata() {
+    history.push('/claim/pendidikan');
+  }
   function handdleUpdate() {
     history.push('/profile/update');
   }
@@ -170,13 +173,25 @@ export default () => {
               }
             >
               <Card.Body>
-                <Card.Title style={{ textAlign: 'center', marginBottom: 20, fontSize: 13 }}>Santunan Kematian</Card.Title>
-                <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                <Card.Title style={{ textAlign: 'center', marginBottom: 20, fontSize: 13 }}>
+                  Santunan Kematian
+                </Card.Title>
+                <Card.Subtitle
+                  className="mb-2 "
+                  style={{ textAlign: 'center', fontWeight: 'bold' }}
+                >
                   {dataPengajuan.claim_kematians.status}
                 </Card.Subtitle>
                 {dataPengajuan.claim_kematians.bukti_tf && (
-                  <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
-                    <Image src={dataPengajuan.claim_kematians.bukti_tf} style={{ width: 100, cursor: 'pointer' }} onClick={() => setShow(true)} />
+                  <Card.Subtitle
+                    className="mb-2 "
+                    style={{ textAlign: 'center', fontWeight: 'bold' }}
+                  >
+                    <Image
+                      src={dataPengajuan.claim_kematians.bukti_tf}
+                      style={{ width: 100, cursor: 'pointer' }}
+                      onClick={() => setShow(true)}
+                    />
                   </Card.Subtitle>
                 )}
               </Card.Body>
@@ -210,13 +225,25 @@ export default () => {
               }
             >
               <Card.Body>
-                <Card.Title style={{ textAlign: 'center', marginBottom: 20, fontSize: 13 }}>Santunan Kesehatan</Card.Title>
-                <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                <Card.Title style={{ textAlign: 'center', marginBottom: 20, fontSize: 13 }}>
+                  Santunan Kesehatan
+                </Card.Title>
+                <Card.Subtitle
+                  className="mb-2 "
+                  style={{ textAlign: 'center', fontWeight: 'bold' }}
+                >
                   {dataPengajuan.claim_kesehatans.status}
                 </Card.Subtitle>
                 {dataPengajuan.claim_kesehatans.bukti_tf && (
-                  <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
-                    <Image src={dataPengajuan.claim_kesehatans.bukti_tf} style={{ width: 100, cursor: 'pointer' }} onClick={() => setView(true)} />
+                  <Card.Subtitle
+                    className="mb-2 "
+                    style={{ textAlign: 'center', fontWeight: 'bold' }}
+                  >
+                    <Image
+                      src={dataPengajuan.claim_kesehatans.bukti_tf}
+                      style={{ width: 100, cursor: 'pointer' }}
+                      onClick={() => setView(true)}
+                    />
                   </Card.Subtitle>
                 )}
                 <Card.Text></Card.Text>
@@ -251,13 +278,25 @@ export default () => {
               }
             >
               <Card.Body>
-                <Card.Title style={{ textAlign: 'center', marginBottom: 20, fontSize: 13 }}>Santunan Nilai Hidup</Card.Title>
-                <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                <Card.Title style={{ textAlign: 'center', marginBottom: 20, fontSize: 13 }}>
+                  Santunan Nilai Hidup
+                </Card.Title>
+                <Card.Subtitle
+                  className="mb-2 "
+                  style={{ textAlign: 'center', fontWeight: 'bold' }}
+                >
                   {dataPengajuan.claim_nilai_hidups.status}
                 </Card.Subtitle>
                 {dataPengajuan.claim_nilai_hidups.bukti_tf && (
-                  <Card.Subtitle className="mb-2 " style={{ textAlign: 'center', fontWeight: 'bold' }}>
-                    <Image src={dataPengajuan.claim_nilai_hidups.bukti_tf} style={{ width: 100, cursor: 'pointer' }} onClick={() => setLook(true)} />
+                  <Card.Subtitle
+                    className="mb-2 "
+                    style={{ textAlign: 'center', fontWeight: 'bold' }}
+                  >
+                    <Image
+                      src={dataPengajuan.claim_nilai_hidups.bukti_tf}
+                      style={{ width: 100, cursor: 'pointer' }}
+                      onClick={() => setLook(true)}
+                    />
                   </Card.Subtitle>
                 )}
                 <Card.Text></Card.Text>
@@ -279,6 +318,59 @@ export default () => {
               )}
             </div>
           </div>
+          <div style={{ width: '25rem', marginTop: 20, marginLeft: 5, marginRight: 5 }}>
+            <Card
+              border={
+                dataPengajuan.claim_pendidikans.status === '-'
+                  ? 'secondary'
+                  : dataPengajuan.claim_pendidikans.status === 'Ditolak'
+                  ? 'danger'
+                  : dataPengajuan.claim_pendidikans.status === 'Verified'
+                  ? 'success'
+                  : 'primary'
+              }
+            >
+              <Card.Body>
+                <Card.Title style={{ textAlign: 'center', marginBottom: 20, fontSize: 13 }}>
+                  Pengajuan Kacamata
+                </Card.Title>
+                <Card.Subtitle
+                  className="mb-2 "
+                  style={{ textAlign: 'center', fontWeight: 'bold' }}
+                >
+                  {dataPengajuan.claim_pendidikans.status}
+                </Card.Subtitle>
+                {dataPengajuan.claim_pendidikans.bukti_tf && (
+                  <Card.Subtitle
+                    className="mb-2 "
+                    style={{ textAlign: 'center', fontWeight: 'bold' }}
+                  >
+                    <Image
+                      src={dataPengajuan.claim_pendidikans.bukti_tf}
+                      style={{ width: 100, cursor: 'pointer' }}
+                      onClick={() => setLook(true)}
+                    />
+                  </Card.Subtitle>
+                )}
+                <Card.Text></Card.Text>
+              </Card.Body>
+            </Card>
+            <div style={{ marginTop: 5 }}>
+              {dataPengajuan.claim_pendidikans.status === '-' ? (
+                <Button variant="outline-success" block size="sm" onClick={handdleKacamata}>
+                  Ajukan
+                </Button>
+              ) : dataPengajuan.claim_pendidikans.status === 'Ditolak' ? (
+                <Button variant="outline-warning" block size="sm">
+                  Ajukan Kembali
+                </Button>
+              ) : (
+                <Button variant="outline-secondary" block size="sm" disabled>
+                  Disabled
+                </Button>
+              )}
+            </div>
+          </div>
         </div>
         <div style={{ marginBottom: 50 }}>
           {dataPengajuan.claim_kematians.pesan && (
@@ -287,7 +379,11 @@ export default () => {
                 Catatan claim Kematian
               </Form.Label>
               <Col sm="9">
-                <Form.Control type="text" value={dataPengajuan.claim_kematians.pesan} disabled={true} />
+                <Form.Control
+                  type="text"
+                  value={dataPengajuan.claim_kematians.pesan}
+                  disabled={true}
+                />
               </Col>
             </Form.Group>
           )}
@@ -297,7 +393,11 @@ export default () => {
                 Catatan claim Kesehatan
               </Form.Label>
               <Col sm="9">
-                <Form.Control type="text" value={dataPengajuan.claim_kesehatans.pesan} disabled={true} />
+                <Form.Control
+                  type="text"
+                  value={dataPengajuan.claim_kesehatans.pesan}
+                  disabled={true}
+                />
               </Col>
             </Form.Group>
           )}
@@ -307,7 +407,11 @@ export default () => {
                 Catatan claim Nilai Hidup
               </Form.Label>
               <Col sm="9">
-                <Form.Control type="text" value={dataPengajuan.claim_nilai_hidups.pesan} disabled={true} />
+                <Form.Control
+                  type="text"
+                  value={dataPengajuan.claim_nilai_hidups.pesan}
+                  disabled={true}
+                />
               </Col>
             </Form.Group>
           )}
@@ -317,17 +421,25 @@ export default () => {
                 Catatan claim Perumahan
               </Form.Label>
               <Col sm="9">
-                <Form.Control type="text" value={dataPengajuan.claim_perumahans.pesan} disabled={true} />
+                <Form.Control
+                  type="text"
+                  value={dataPengajuan.claim_perumahans.pesan}
+                  disabled={true}
+                />
               </Col>
             </Form.Group>
           )}
           {dataPengajuan.claim_pendidikans.pesan && (
             <Form.Group as={Row}>
               <Form.Label column sm="3">
-                Catatan claim Pendidikan
+                Catatan claim Kacamata
               </Form.Label>
               <Col sm="9">
-                <Form.Control type="text" value={dataPengajuan.claim_pendidikans.pesan} disabled={true} />
+                <Form.Control
+                  type="text"
+                  value={dataPengajuan.claim_pendidikans.pesan}
+                  disabled={true}
+                />
               </Col>
             </Form.Group>
           )}
@@ -335,10 +447,20 @@ export default () => {
         <Row>
           <Col>
             <div style={{ marginBottom: 20 }}>
-              <Image src={require('../assets/image/logo.png')} roundedCircle style={{ width: 300, height: 300 }} />
+              <Image
+                src={require('../assets/image/logo.png')}
+                roundedCircle
+                style={{ width: 300, height: 300 }}
+              />
             </div>
             <Card style={{ width: '20rem', marginTop: 20 }}>
-              <Button variant="warning" size="lg" type="submit" block onClick={() => handdleUpdate()}>
+              <Button
+                variant="warning"
+                size="lg"
+                type="submit"
+                block
+                onClick={() => handdleUpdate()}
+              >
                 Update Profile
               </Button>
             </Card>
@@ -363,7 +485,12 @@ export default () => {
                   No Induk
                 </Form.Label>
                 <Col sm="10">
-                  <Form.Control type="text" name="no_induk" value={profileData.no_induk} disabled={true} />
+                  <Form.Control
+                    type="text"
+                    name="no_induk"
+                    value={profileData.no_induk}
+                    disabled={true}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row}>
@@ -371,7 +498,12 @@ export default () => {
                   Email
                 </Form.Label>
                 <Col sm="10">
-                  <Form.Control type="email" name="email" value={profileData.email} disabled={true} />
+                  <Form.Control
+                    type="email"
+                    name="email"
+                    value={profileData.email}
+                    disabled={true}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row}>
@@ -379,7 +511,12 @@ export default () => {
                   Tgl Lahir
                 </Form.Label>
                 <Col sm="10">
-                  <Form.Control type="date" name="tgl_lahir" value={profileData.tgl_lahir} disabled={true} />
+                  <Form.Control
+                    type="date"
+                    name="tgl_lahir"
+                    value={profileData.tgl_lahir}
+                    disabled={true}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row}>
@@ -387,7 +524,12 @@ export default () => {
                   No KTP
                 </Form.Label>
                 <Col sm="10">
-                  <Form.Control type="text" name="no_ktp" value={profileData.no_ktp} disabled={true} />
+                  <Form.Control
+                    type="text"
+                    name="no_ktp"
+                    value={profileData.no_ktp}
+                    disabled={true}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row}>
@@ -395,7 +537,12 @@ export default () => {
                   No BPJS
                 </Form.Label>
                 <Col sm="10">
-                  <Form.Control type="text" name="no_bpjs" value={profileData.no_bpjs} disabled={true} />
+                  <Form.Control
+                    type="text"
+                    name="no_bpjs"
+                    value={profileData.no_bpjs}
+                    disabled={true}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row}>
@@ -409,7 +556,11 @@ export default () => {
                   No Rek
                 </Form.Label>
                 <Col>
-                  <Form.Control name="no_rekening" value={profileData.no_rekening} disabled={true} />
+                  <Form.Control
+                    name="no_rekening"
+                    value={profileData.no_rekening}
+                    disabled={true}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row}>
@@ -417,13 +568,21 @@ export default () => {
                   Sat. Kerja
                 </Form.Label>
                 <Col xs={5}>
-                  <Form.Control name="satuan_kerja" value={profileData.satuan_kerja} disabled={true} />
+                  <Form.Control
+                    name="satuan_kerja"
+                    value={profileData.satuan_kerja}
+                    disabled={true}
+                  />
                 </Col>
                 <Form.Label column sm="1.5">
                   Golongan
                 </Form.Label>
                 <Col>
-                  <Form.Control name="golongan_pangkat" value={profileData.golongan_pangkat} disabled={true} />
+                  <Form.Control
+                    name="golongan_pangkat"
+                    value={profileData.golongan_pangkat}
+                    disabled={true}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row}>
@@ -431,7 +590,12 @@ export default () => {
                   No Telp
                 </Form.Label>
                 <Col sm="10">
-                  <Form.Control type="text" name="no_telp" value={profileData.no_telp} disabled={true} />
+                  <Form.Control
+                    type="text"
+                    name="no_telp"
+                    value={profileData.no_telp}
+                    disabled={true}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row}>
@@ -439,7 +603,12 @@ export default () => {
                   Alamat
                 </Form.Label>
                 <Col sm="10">
-                  <Form.Control type="text" name="alamat" value={profileData.alamat} disabled={true} />
+                  <Form.Control
+                    type="text"
+                    name="alamat"
+                    value={profileData.alamat}
+                    disabled={true}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row}>
