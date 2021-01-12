@@ -4,6 +4,7 @@ import { Button, Form, Container, Row, Col } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import SignatureCanvas from 'react-signature-canvas';
 import host from '../../hooks/host';
 
 export default () => {
@@ -245,6 +246,29 @@ export default () => {
             <Form.Label>Lampiran </Form.Label>
             <Form.File.Input name="lampiran" onChange={onFormChange} />
           </Form.Group> */}
+          <div style={{ marginTop: 10, marginBottom: 10 }}>
+            <p>Tanda tangan</p>
+            <div
+              style={{
+                backgroundColor: 'white',
+                width: 500,
+                height: 200,
+                borderWidth: 1,
+                borderStyle: 'solid',
+              }}
+            >
+              <SignatureCanvas
+                penColor="black"
+                canvasProps={{
+                  width: 500,
+                  height: 200,
+                  className: 'sigCanvas',
+                  top: 5,
+                  left: 20,
+                }}
+              />
+            </div>
+          </div>
           <Button variant="success" onClick={handdleBack} block>
             Back
           </Button>
