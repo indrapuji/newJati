@@ -11,6 +11,8 @@ import Covid from '../assets/image/covid.png';
 import Covid2 from '../assets/image/covid2.png';
 import Covid3 from '../assets/image/covid3.png';
 import Covid4 from '../assets/image/covid4.png';
+import Penanaman from '../assets/image/image-1.jpeg';
+import BangunKemandirian from '../assets/image/image-2.jpeg';
 import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { Modal, Image } from 'react-bootstrap';
@@ -130,6 +132,35 @@ export default () => {
                     <h3 className="title" style={{ textAlign: 'center' }}>
                       Kegiatan Bhakti Sosial YKP3JS
                     </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style={{ padding: 10 }}>
+          <div className="container mt-40">
+            <div className="row mt-30">
+              <div className="col-md-3 col-sm-6" onClick={() => handleShow(Penanaman)}>
+                <div className="box15">
+                  <img src={Penanaman} style={{ height: '10rem' }} alt="" />
+                  <div className="box-content">
+                    <h3 className="title" style={{ textAlign: 'center' }}>
+                      {''}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-3 col-sm-6" onClick={() => handleShow(BangunKemandirian)}>
+                <div className="box15">
+                  <img src={BangunKemandirian} style={{ height: '10rem' }} alt="" />
+                  <div className="box-content">
+                    <p className="titleHome" style={{ textAlign: 'center' }}>
+                      Pemberian Bantuan Pendidikan <br />
+                      2020 / 2021
+                      <br />
+                      perwakilan Jawa Timur
+                    </p>
                   </div>
                 </div>
               </div>

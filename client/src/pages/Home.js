@@ -12,7 +12,7 @@ import Kacamata from '../assets/image/kacamata.png';
 import NilaiHidup from '../assets/image/nilaiHidup.jpg';
 import SantunanKematian from '../assets/image/santunanKematian.jpg';
 import BangunKemandirian from '../assets/image/image-2.jpeg';
-import BriDukung from '../assets/image/bridukungjati.jpeg';
+import Kunjungan from '../assets/image/Kunjungan.png';
 import Santunan from '../assets/image/santunan.jpeg';
 import { Link, useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -281,7 +281,7 @@ export default () => {
                   <img src={Penanaman} style={{ height: '10rem' }} alt="" />
                   <div className="box-content">
                     <h3 className="title" style={{ textAlign: 'center' }}>
-                      Penanaman Jagung
+                      {''}
                     </h3>
                   </div>
                 </div>
@@ -290,18 +290,21 @@ export default () => {
                 <div className="box15">
                   <img src={BangunKemandirian} style={{ height: '10rem' }} alt="" />
                   <div className="box-content">
-                    <h3 className="title" style={{ textAlign: 'center' }}>
-                      Bangun Kemandirian Desa
-                    </h3>
+                    <p className="titleHome" style={{ textAlign: 'center' }}>
+                      Pemberian Bantuan Pendidikan <br />
+                      2020 / 2021
+                      <br />
+                      perwakilan Jawa Timur
+                    </p>
                   </div>
                 </div>
               </div>
               <div data-aos="flip-up" className="col-md-3 col-sm-6">
                 <div className="box15">
-                  <img src={BriDukung} style={{ height: '10rem' }} alt="" />
+                  <img src={Kunjungan} style={{ height: '10rem' }} alt="" />
                   <div className="box-content">
                     <h3 className="title" style={{ textAlign: 'center' }}>
-                      Program Jati Sejahtera
+                      Kunjungan Bpk. Drs. Djoko Setijono
                     </h3>
                   </div>
                 </div>
