@@ -105,7 +105,9 @@ export default () => {
   };
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
-      <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>Pengajuan Claim Manfaat Nilai Hidup</h1>
+      <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>
+        Pengajuan Claim Manfaat Nilai Hidup
+      </h1>
       <Container>
         <Form onSubmit={onFormSubmit}>
           <Form.Group as={Row}>
@@ -129,7 +131,12 @@ export default () => {
               NIP/NPP/NIK <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control type="text" placeholder="NIP / NPP / NIK" name="no_induk" onChange={onFormChange} />
+              <Form.Control
+                type="text"
+                placeholder="NIP / NPP / NIK"
+                name="no_induk"
+                onChange={onFormChange}
+              />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -137,10 +144,18 @@ export default () => {
               Satuan Kerja <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col xs={5}>
-              <Form.Control placeholder="Satuan Kerja Saat Pensiun" name="satuan_kerja" onChange={onFormChange} />
+              <Form.Control
+                placeholder="Satuan Kerja Saat Pensiun"
+                name="satuan_kerja"
+                onChange={onFormChange}
+              />
             </Col>
             <Col>
-              <Form.Control placeholder="Golongan Pangkat Saat Pensiun" name="golongan_pangkat" onChange={onFormChange} />
+              <Form.Control
+                placeholder="Golongan Pangkat Saat Pensiun"
+                name="golongan_pangkat"
+                onChange={onFormChange}
+              />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -148,13 +163,22 @@ export default () => {
               Alamat <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control type="text" placeholder="Alamat" name="alamat" onChange={onFormChange} />
+              <Form.Control
+                type="text"
+                placeholder="Alamat"
+                name="alamat"
+                onChange={onFormChange}
+              />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
             <Form.Label column sm="2"></Form.Label>
             <Col xs={5}>
-              <Form.Control placeholder="Kelurahan / Desa" name="kelurahan" onChange={onFormChange} />
+              <Form.Control
+                placeholder="Kelurahan / Desa"
+                name="kelurahan"
+                onChange={onFormChange}
+              />
             </Col>
             <Col>
               <Form.Control placeholder="Kecamatan" name="kecamatan" onChange={onFormChange} />
@@ -177,7 +201,12 @@ export default () => {
               No HP Pensiunan <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control type="text" placeholder="No HP Pensiunan" name="no_telp" onChange={onFormChange} />
+              <Form.Control
+                type="text"
+                placeholder="No HP Pensiunan"
+                name="no_telp"
+                onChange={onFormChange}
+              />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -185,7 +214,12 @@ export default () => {
               Kota Tempat Pensiun <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control type="text" placeholder="Kota Tempat Pensiun" name="kota_pensiun" onChange={onFormChange} />
+              <Form.Control
+                type="text"
+                placeholder="Kota Tempat Pensiun"
+                name="kota_pensiun"
+                onChange={onFormChange}
+              />
             </Col>
           </Form.Group>
           <Form.Group>
@@ -205,7 +239,7 @@ export default () => {
             <Form.File.Input name="fotokopi_sk_pensiun" onChange={onFormChange} />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Lampiran </Form.Label>
+            <Form.Label>Foto selfie dangan memegang KTP</Form.Label>
             <Form.File.Input name="lampiran" onChange={onFormChange} />
           </Form.Group>
           <Button variant="success" onClick={handdleBack} block>

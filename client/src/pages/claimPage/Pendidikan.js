@@ -222,29 +222,29 @@ export default () => {
             </Col>
           </Form.Group>
           <Form.Group>
-            <Form.Label>File 1</Form.Label>
+            <Form.Label>Fotocopy KTP</Form.Label>
             <Form.File.Input custom name="data1" onChange={onFormChange} />
           </Form.Group>
           <Form.Group>
-            <Form.Label>File 2</Form.Label>
+            <Form.Label>Fotocopy Kartu Peserta</Form.Label>
             <Form.File.Input custom name="data2" onChange={onFormChange} />
           </Form.Group>
           <Form.Group>
-            <Form.Label>File 3</Form.Label>
+            <Form.Label>Fotocopy SK Pensiun</Form.Label>
             <Form.File.Input custom name="data3" onChange={onFormChange} />
           </Form.Group>
           <Form.Group>
-            <Form.Label>File 4</Form.Label>
+            <Form.Label>Foto selfie dangan memegang KTP</Form.Label>
             <Form.File.Input custom name="data4" onChange={onFormChange} />
           </Form.Group>
-          <Form.Group>
+          {/* <Form.Group>
             <Form.Label>File 5</Form.Label>
             <Form.File.Input custom name="data5" onChange={onFormChange} />
           </Form.Group>
           <Form.Group>
             <Form.Label>Lampiran </Form.Label>
             <Form.File.Input name="lampiran" onChange={onFormChange} />
-          </Form.Group>
+          </Form.Group> */}
           <Button variant="success" onClick={handdleBack} block>
             Back
           </Button>
