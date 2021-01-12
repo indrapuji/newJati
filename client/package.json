@@ -21,6 +21,7 @@
     "react-router-dom": "^5.2.0",
     "react-router-sitemap": "^1.2.0",
     "react-scripts": "^3.4.3",
+    "react-signature-canvas": "^1.0.3",
     "sweetalert2": "^9.17.1"
   },
   "scripts": {
