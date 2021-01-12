@@ -22,38 +22,43 @@ export default () => {
   };
   const history = useHistory();
   const [profileData, setProfileData] = useState('');
-  const [dataForm, setDataForm] = useState({
-    nama: '',
-    email: '',
-    tgl_lahir: '',
-    no_ktp: '',
-    no_bpjs: '',
-    nama_bank: '',
-    no_rekening: '',
-    satuan_kerja: '',
-    golongan_pangkat: '',
-    no_telp: '',
-    alamat: '',
-    kelurahan: '',
-    kecamatan: '',
-    kota: '',
-    kodepos: '',
-    provinsi: '',
-    nama_pasangan: '',
-    tgl_lahir_pasangan: '',
-    no_telp_pasangan: '',
-    no_ktp_pasangan: '',
-    no_bpjs_pasangan: '',
-    nama_bank_pasangan: '',
-    no_rekening_pasangan: '',
-    nama_anak: '',
-    tgl_lahir_anak: '',
-    no_tlp_anak: '',
-    no_ktp_anak: '',
-    no_bpjs_anak: '',
-    nama_bank_anak: '',
-    no_rekening_anak: '',
-  });
+
+  const [rev, setRev] = useState({});
+  useEffect(() => {
+    setRev({
+      nama: profileData.nama,
+      email: profileData.email,
+      tgl_lahir: profileData.tgl_lahir,
+      no_ktp: profileData.no_ktp,
+      no_bpjs: profileData.no_bpjs,
+      nama_bank: profileData.nama_bank,
+      no_rekening: profileData.no_rekening,
+      satuan_kerja: profileData.satuan_kerja,
+      golongan_pangkat: profileData.golongan_pangkat,
+      no_telp: profileData.no_telp,
+      alamat: profileData.alamat,
+      kelurahan: profileData.kelurahan,
+      kecamatan: profileData.kecamatan,
+      kota: profileData.kota,
+      kodepos: profileData.kodepos,
+      provinsi: profileData.provinsi,
+      nama_pasangan: profileData.nama_pasangan,
+      tgl_lahir_pasangan: profileData.tgl_lahir_pasangan,
+      no_telp_pasangan: profileData.no_telp_pasangan,
+      no_ktp_pasangan: profileData.no_ktp_pasangan,
+      no_bpjs_pasangan: profileData.no_bpjs_pasangan,
+      nama_bank_pasangan: profileData.nama_bank_pasangan,
+      no_rekening_pasangan: profileData.no_rekening_pasangan,
+      nama_anak: profileData.nama_anak,
+      tgl_lahir_anak: profileData.tgl_lahir_anak,
+      no_tlp_anak: profileData.no_tlp_anak,
+      no_ktp_anak: profileData.no_ktp_anak,
+      no_bpjs_anak: profileData.no_bpjs_anak,
+      nama_bank_anak: profileData.nama_bank_anak,
+      no_rekening_anak: profileData.no_rekening_anak,
+    });
+    // eslint-disable-next-line
+  }, [profileData]);
 
   const getProfileData = async () => {
     try {
@@ -95,8 +100,8 @@ export default () => {
   const onFormChange = (e) => {
     e.preventDefault();
     const { value, name } = e.target;
-    setDataForm({
-      ...dataForm,
+    setRev({
+      ...rev,
       [name]: value,
     });
   };
@@ -106,7 +111,7 @@ export default () => {
       await axios({
         method: 'PUT',
         url: `${host}/users/edit-anggota`,
-        data: dataForm,
+        data: rev,
         headers: {
           token: localStorage.token,
         },
@@ -153,7 +158,7 @@ export default () => {
                 Nama <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.nama} name="nama" onChange={onFormChange} />
+                <Form.Control type="text" value={rev.nama} name="nama" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -161,7 +166,12 @@ export default () => {
                 Tanggal Lahir <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="date" placeholder={profileData.tgl_lahir} name="tgl_lahir" onChange={onFormChange} />
+                <Form.Control
+                  type="date"
+                  value={rev.tgl_lahir}
+                  name="tgl_lahir"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -169,7 +179,12 @@ export default () => {
                 No KTP <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.no_ktp} name="no_ktp" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.no_ktp}
+                  name="no_ktp"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -177,7 +192,12 @@ export default () => {
                 No BPJS
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.no_bpjs} name="no_bpjs" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.no_bpjs}
+                  name="no_bpjs"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -186,14 +206,14 @@ export default () => {
               </Form.Label>
               <Col xs={3}>
                 <Form.Control
-                  placeholder={profileData.nama_bank === '-' ? 'Nama Bank' : profileData.nama_bank}
+                  value={rev.nama_bank === '-' ? 'Nama Bank' : rev.nama_bank}
                   name="nama_bank"
                   onChange={onFormChange}
                 />
               </Col>
               <Col>
                 <Form.Control
-                  placeholder={profileData.no_rekening === '-' ? 'No Rekening' : profileData.no_rekening}
+                  value={rev.no_rekening === '-' ? 'No Rekening' : rev.no_rekening}
                   name="no_rekening"
                   onChange={onFormChange}
                 />
@@ -205,14 +225,14 @@ export default () => {
               </Form.Label>
               <Col xs={5}>
                 <Form.Control
-                  placeholder={profileData.satuan_kerja === '-' ? 'Satuan Kerja' : profileData.satuan_kerja}
+                  value={rev.satuan_kerja === '-' ? 'Satuan Kerja' : rev.satuan_kerja}
                   name="satuan_kerja"
                   onChange={onFormChange}
                 />
               </Col>
               <Col>
                 <Form.Control
-                  placeholder={profileData.golongan_pangkat === '-' ? 'Golongan / Pangkat' : profileData.golongan_pangkat}
+                  value={rev.golongan_pangkat === '-' ? 'Golongan / Pangkat' : rev.golongan_pangkat}
                   name="golongan_pangkat"
                   onChange={onFormChange}
                 />
@@ -223,7 +243,7 @@ export default () => {
                 Alamat Email
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="email" placeholder={profileData.email} name="email" onChange={onFormChange} />
+                <Form.Control type="email" value={rev.email} name="email" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -231,7 +251,12 @@ export default () => {
                 No HP Pensiunan <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.no_telp} name="no_telp" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.no_telp}
+                  name="no_telp"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -239,21 +264,26 @@ export default () => {
                 Alamat <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.alamat} name="alamat" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.alamat}
+                  name="alamat"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
               <Form.Label column sm="2"></Form.Label>
               <Col xs={5}>
                 <Form.Control
-                  placeholder={profileData.kelurahan === '-' ? 'Kelurahan' : profileData.kelurahan}
+                  value={rev.kelurahan === '-' ? 'Kelurahan' : rev.kelurahan}
                   name="kelurahan"
                   onChange={onFormChange}
                 />
               </Col>
               <Col>
                 <Form.Control
-                  placeholder={profileData.kecamatan === '-' ? 'Kecamatan' : profileData.kecamatan}
+                  value={rev.kecamatan === '-' ? 'Kecamatan' : rev.kecamatan}
                   name="kecamatan"
                   onChange={onFormChange}
                 />
@@ -262,26 +292,41 @@ export default () => {
             <Form.Group as={Row}>
               <Form.Label column sm="2"></Form.Label>
               <Col xs={4}>
-                <Form.Control placeholder={profileData.kota === '-' ? 'Kota' : profileData.kota} name="kota" onChange={onFormChange} />
-              </Col>
-              <Col>
-                <Form.Control placeholder={profileData.kodepos === '-' ? 'Kodepos' : profileData.kodepos} name="kodepos" onChange={onFormChange} />
+                <Form.Control
+                  value={rev.kota === '-' ? 'Kota' : rev.kota}
+                  name="kota"
+                  onChange={onFormChange}
+                />
               </Col>
               <Col>
                 <Form.Control
-                  placeholder={profileData.provinsi === '-' ? 'Provinsi' : profileData.provinsi}
+                  value={rev.kodepos === '-' ? 'Kodepos' : rev.kodepos}
+                  name="kodepos"
+                  onChange={onFormChange}
+                />
+              </Col>
+              <Col>
+                <Form.Control
+                  value={rev.provinsi === '-' ? 'Provinsi' : rev.provinsi}
                   name="provinsi"
                   onChange={onFormChange}
                 />
               </Col>
             </Form.Group>
-            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>Data Istri / Suami</h3>
+            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>
+              Data Istri / Suami
+            </h3>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
                 Nama Istri / Suami
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.nama_pasangan} name="nama_pasangan" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.nama_pasangan}
+                  name="nama_pasangan"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -289,7 +334,12 @@ export default () => {
                 Tanggal Lahir Istri / Suami
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="date" placeholder={profileData.tgl_lahir_pasangan} name="tgl_lahir_pasangan" onChange={onFormChange} />
+                <Form.Control
+                  type="date"
+                  value={rev.tgl_lahir_pasangan}
+                  name="tgl_lahir_pasangan"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -297,7 +347,12 @@ export default () => {
                 No Telp Istri / Suami
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.no_telp_pasangan} name="no_telp_pasangan" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.no_telp_pasangan}
+                  name="no_telp_pasangan"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -305,7 +360,12 @@ export default () => {
                 No KTP Istri / Suami
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.no_ktp_pasangan} name="no_ktp_pasangan" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.no_ktp_pasangan}
+                  name="no_ktp_pasangan"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -313,7 +373,12 @@ export default () => {
                 No BPJS Istri / Suami
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.no_bpjs_pasangan} name="no_bpjs_pasangan" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.no_bpjs_pasangan}
+                  name="no_bpjs_pasangan"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -322,26 +387,35 @@ export default () => {
               </Form.Label>
               <Col xs={3}>
                 <Form.Control
-                  placeholder={profileData.nama_bank_pasangan === '-' ? 'Nama Bank' : profileData.nama_bank_pasangan}
+                  value={rev.nama_bank_pasangan === '-' ? 'Nama Bank' : rev.nama_bank_pasangan}
                   name="nama_bank_pasangan"
                   onChange={onFormChange}
                 />
               </Col>
               <Col>
                 <Form.Control
-                  placeholder={profileData.no_rekening_pasangan === '-' ? 'No Rekening' : profileData.no_rekening_pasangan}
+                  value={
+                    rev.no_rekening_pasangan === '-' ? 'No Rekening' : rev.no_rekening_pasangan
+                  }
                   name="no_rekening_pasangan"
                   onChange={onFormChange}
                 />
               </Col>
             </Form.Group>
-            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>Data anak yang masih dalam tanggungan</h3>
+            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>
+              Data anak yang masih dalam tanggungan
+            </h3>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
                 Nama Anak
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.nama_anak} name="nama_anak" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.nama_anak}
+                  name="nama_anak"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -349,7 +423,12 @@ export default () => {
                 Tanggal Lahir Anak
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="date" placeholder={profileData.tgl_lahir_anak} name="tgl_lahir_anak" onChange={onFormChange} />
+                <Form.Control
+                  type="date"
+                  value={rev.tgl_lahir_anak}
+                  name="tgl_lahir_anak"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -357,7 +436,12 @@ export default () => {
                 No Telp Anak
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.no_tlp_anak} name="no_tlp_anak" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.no_tlp_anak}
+                  name="no_tlp_anak"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -365,7 +449,12 @@ export default () => {
                 No KTP Anak
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.no_ktp_anak} name="no_ktp_anak" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.no_ktp_anak}
+                  name="no_ktp_anak"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -373,7 +462,12 @@ export default () => {
                 No BPJS Anak
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder={profileData.no_bpjs_anak} name="no_bpjs_anak" onChange={onFormChange} />
+                <Form.Control
+                  type="text"
+                  value={rev.no_bpjs_anak}
+                  name="no_bpjs_anak"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -382,14 +476,14 @@ export default () => {
               </Form.Label>
               <Col xs={3}>
                 <Form.Control
-                  placeholder={profileData.nama_bank_anak === '-' ? 'Nama Bank' : profileData.nama_bank_anak}
+                  value={rev.nama_bank_anak === '-' ? 'Nama Bank' : rev.nama_bank_anak}
                   name="nama_bank_anak"
                   onChange={onFormChange}
                 />
               </Col>
               <Col>
                 <Form.Control
-                  placeholder={profileData.no_rekening_anak === '-' ? 'No Rekening' : profileData.no_rekening_anak}
+                  value={rev.no_rekening_anak === '-' ? 'No Rekening' : rev.no_rekening_anak}
                   name="no_rekening_anak"
                   onChange={onFormChange}
                 />
