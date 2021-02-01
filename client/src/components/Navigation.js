@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, NavDropdown, DropdownButton, Dropdown } from 'react-bootstrap';
+import { Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default () => {
@@ -25,7 +25,6 @@ export default () => {
               Admin
             </NavDropdown.Item>
           </NavDropdown>
-          {/* <Link to="/pembaharuan">Pembaharuan</Link> */}
           <NavDropdown title="Profile">
             <NavDropdown.Item>
               <Link to="/profile/about">Company Profile</Link>
@@ -36,9 +35,6 @@ export default () => {
             <NavDropdown.Item>
               <Link to="/profile/cabang">Alamat Kantor YKP3JS</Link>
             </NavDropdown.Item>
-            {/* <NavDropdown.Item>
-              <Link to="/profile/sejarah">Sejarah Singkat Yayasan</Link>
-            </NavDropdown.Item> */}
           </NavDropdown>
           <NavDropdown title="Program">
             <NavDropdown.Item>
@@ -55,31 +51,15 @@ export default () => {
             </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Data">
-            {/* <Link to="/data/realisasi">Data Realisasi</Link> */}
-            <DropdownButton style={{ left: 10 }} drop="right" variant="link" title="Data Realisasi">
-              <Dropdown.Item>
-                <Link to="/data/realisasipendidikan">Pendidikan</Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link to="/data/realisasiperumahan">Perumahan</Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link to="/data/realisasikesehatan">Kesehatan</Link>
-              </Dropdown.Item>
-              {/* <Dropdown.Item>
-                <Link to="/data/realisasisosial">Sosial</Link>
-              </Dropdown.Item> */}
-            </DropdownButton>
-
-            {/* <NavDropdown.Item>
-              <Link to="/data/update">Pengkinian Data</Link>
-            </NavDropdown.Item> */}
-            {/* <NavDropdown.Item>
-              <Link to="/data/claim">Pengajuan Claim</Link>
-            </NavDropdown.Item> */}
-            {/* <NavDropdown.Item href="https://jatisejahtera-cms.vercel.app/" style={{ color: "blue" }}>
-              Admin
-            </NavDropdown.Item> */}
+            <NavDropdown.Item>
+              <Link to="/data/realisasipendidikan">Pendidikan</Link>
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              <Link to="/data/realisasiperumahan">Perumahan</Link>
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              <Link to="/data/realisasikesehatan">Kesehatan</Link>
+            </NavDropdown.Item>
           </NavDropdown>
           <Link to="/berita">Berita</Link>
           <Link to="/galery">Galery</Link>

@@ -61,13 +61,21 @@ export default () => {
     fotokopi_kp: '',
     lampiran: '',
   });
+  console.log(formData.tgl_lahir);
   const onFormChange = (e) => {
     e.preventDefault();
-    const { name, files } = e.target;
-    setFormData({
-      ...formData,
-      [name]: files[0],
-    });
+    const { name, value, files } = e.target;
+    if (files) {
+      setFormData({
+        ...formData,
+        [name]: files[0],
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
   const onFormSubmit = async (e) => {
     try {
@@ -113,9 +121,7 @@ export default () => {
   };
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
-      <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>
-        Pengajuan Claim Kesehatan
-      </h1>
+      <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>Pengajuan Bantuan Rawat Inap</h1>
       <Container>
         <Form onSubmit={onFormSubmit}>
           <Form.Group as={Row}>
@@ -131,7 +137,7 @@ export default () => {
               Tanggal Lahir <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control type="date" name="tgl_lahir" onChange={onFormChange} />
+              <Form.Control type="text" placeholder="YYYY-MM-DD" name="tgl_lahir" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -139,12 +145,7 @@ export default () => {
               NIP/NPP/NIK <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                type="text"
-                placeholder="NIP / NPP / NIK"
-                name="no_induk"
-                onChange={onFormChange}
-              />
+              <Form.Control type="text" placeholder="NIP / NPP / NIK" name="no_induk" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -152,18 +153,10 @@ export default () => {
               Satuan Kerja <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col xs={5}>
-              <Form.Control
-                placeholder="Satuan Kerja Saat Pensiun"
-                name="satuan_kerja"
-                onChange={onFormChange}
-              />
+              <Form.Control placeholder="Satuan Kerja Saat Pensiun" name="satuan_kerja" onChange={onFormChange} />
             </Col>
             <Col>
-              <Form.Control
-                placeholder="Golongan Pangkat Saat Pensiun"
-                name="golongan_pangkat"
-                onChange={onFormChange}
-              />
+              <Form.Control placeholder="Golongan Pangkat Saat Pensiun" name="golongan_pangkat" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -171,22 +164,13 @@ export default () => {
               Alamat <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                type="text"
-                placeholder="Alamat"
-                name="alamat"
-                onChange={onFormChange}
-              />
+              <Form.Control type="text" placeholder="Alamat" name="alamat" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
             <Form.Label column sm="2"></Form.Label>
             <Col xs={5}>
-              <Form.Control
-                placeholder="Kelurahan / Desa"
-                name="kelurahan"
-                onChange={onFormChange}
-              />
+              <Form.Control placeholder="Kelurahan / Desa" name="kelurahan" onChange={onFormChange} />
             </Col>
             <Col>
               <Form.Control placeholder="Kecamatan" name="kecamatan" onChange={onFormChange} />
@@ -209,12 +193,7 @@ export default () => {
               No HP Pensiunan <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                type="text"
-                placeholder="No HP Pensiunan"
-                name="no_telp"
-                onChange={onFormChange}
-              />
+              <Form.Control type="text" placeholder="No HP Pensiunan" name="no_telp" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -222,12 +201,7 @@ export default () => {
               Kota Tempat Pensiun <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                type="text"
-                placeholder="Kota Tempat Pensiun"
-                name="kota_pensiun"
-                onChange={onFormChange}
-              />
+              <Form.Control type="text" placeholder="Kota Tempat Pensiun" name="kota_pensiun" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -235,12 +209,7 @@ export default () => {
               Nama yang dirawat <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                type="text"
-                placeholder="Pasien"
-                name="pasien"
-                onChange={onFormChange}
-              />
+              <Form.Control type="text" placeholder="Pasien" name="pasien" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -248,12 +217,7 @@ export default () => {
               Status yang dirawat (Peg/Istri/Suami/Anak) <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                type="text"
-                placeholder="Status Rawat"
-                name="status_rawat"
-                onChange={onFormChange}
-              />
+              <Form.Control type="text" placeholder="Status Rawat" name="status_rawat" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -261,12 +225,7 @@ export default () => {
               Dirawat dirumah sakit <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                type="text"
-                placeholder="Nama Rumah Sakit"
-                name="rumah_sakit"
-                onChange={onFormChange}
-              />
+              <Form.Control type="text" placeholder="Nama Rumah Sakit" name="rumah_sakit" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -274,12 +233,7 @@ export default () => {
               Untuk Perawatan <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                type="text"
-                placeholder="Nama Perawatan"
-                name="sakit"
-                onChange={onFormChange}
-              />
+              <Form.Control type="text" placeholder="Nama Perawatan" name="sakit" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -287,12 +241,7 @@ export default () => {
               Atas Permintaan dokter <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                type="text"
-                placeholder="Nama Dokter"
-                name="nama_dokter"
-                onChange={onFormChange}
-              />
+              <Form.Control type="text" placeholder="Nama Dokter" name="nama_dokter" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row}>
@@ -300,35 +249,36 @@ export default () => {
               Tgl. Masuk Rumah Sakit <span style={{ color: 'red' }}>*</span>
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                type="text"
-                placeholder="Tanggal MAsuk Rumah Sakit"
-                name="tgl_masuk"
-                onChange={onFormChange}
-              />
+              <Form.Control type="text" placeholder="YYYY-MM-DD" name="tgl_masuk" onChange={onFormChange} />
             </Col>
           </Form.Group>
           <Form.Group>
+            <Form.Check type="checkbox" inline checked={formData.surat_permohonan_bantuan_biaya !== '' ? true : false} />
             <Form.Label>Surat permohonan bantuan biaya rawat inap dari pensiunan</Form.Label>
             <Form.File.Input name="surat_permohonan_bantuan_biaya" onChange={onFormChange} />
           </Form.Group>
           <Form.Group>
+            <Form.Check type="checkbox" inline checked={formData.kuitansi_asli_rs !== '' ? true : false} />
             <Form.Label>Kuitansi asli dari Rumah Sakit pensiunan di rawat </Form.Label>
             <Form.File.Input name="kuitansi_asli_rs" onChange={onFormChange} />
           </Form.Group>
           <Form.Group>
+            <Form.Check type="checkbox" inline checked={formData.surat_keterangan_rs !== '' ? true : false} />
             <Form.Label>Surat keterangan sakit yang di tanda tangani oleh rumah sakit</Form.Label>
             <Form.File.Input name="surat_keterangan_rs" onChange={onFormChange} />
           </Form.Group>
           <Form.Group>
+            <Form.Check type="checkbox" inline checked={formData.fotokopi_sk_pensiun !== '' ? true : false} />
             <Form.Label>Photo Copy SK Pensiun </Form.Label>
             <Form.File.Input name="fotokopi_sk_pensiun" onChange={onFormChange} />
           </Form.Group>
           <Form.Group>
+            <Form.Check type="checkbox" inline checked={formData.fotokopi_kp !== '' ? true : false} />
             <Form.Label>Photo copy kartu peserta </Form.Label>
             <Form.File.Input name="fotokopi_kp" onChange={onFormChange} />
           </Form.Group>
           <Form.Group>
+            <Form.Check type="checkbox" inline checked={formData.lampiran !== '' ? true : false} />
             <Form.Label>Foto selfie dangan memegang KTP</Form.Label>
             <Form.File.Input name="lampiran" onChange={onFormChange} />
           </Form.Group>

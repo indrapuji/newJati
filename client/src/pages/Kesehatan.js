@@ -84,7 +84,11 @@ export default () => {
         <div data-aos="flip-left" style={{ marginTop: 20 }}>
           <p>Mekanisme Pengajuan Penggantian Biaya</p>
           <ul style={{ marginLeft: -10, marginTop: -10 }}>
-            <li>Kwitansi dan syarat – syarat lengkap dikirim ke kantor YKP3 Jati Sejahtera Pusat melalui satuan kantor Perum Perhutani terdekat.</li>
+            <li>
+              Kwitansi dan syarat – syarat lengkap dikirim ke kantor YKP3 Jati Sejahtera Pusat melalui satuan kantor Perum Perhutani terdekat, atau
+              bisa melalui kantor pusat YKP3JS baik dengan cara mengirimkan berkas ke kantor pusat atau bisa juga melalui online di website kami
+              www.jatisejahtera.or.id
+            </li>
             <li>Satuan Kantor Perum Perhutani terdekat meneruskan / mengirim ke kantor YKP3 Jati Sejahtera Pusat.</li>
             <li>Pembayaran melalui satuan kantor perum Perhutani terdekat setelah menerima kiriman dari kantor YKP3 Jati Sejahtera Pusat.</li>
             <li>Metode penggantian biaya rawat inap dan pembedahan adalah dengan reimbursement.</li>
