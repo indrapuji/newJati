@@ -230,7 +230,7 @@ export default () => {
                   Ajukan
                 </Button>
               ) : dataPengajuan.claim_kesehatans.status === 'Ditolak' ? (
-                <Button variant="outline-warning" block size="sm">
+                <Button variant="outline-warning" block size="sm" onClick={handdleKesehatan}>
                   Ajukan Kembali
                 </Button>
               ) : (
@@ -271,7 +271,7 @@ export default () => {
                   Ajukan
                 </Button>
               ) : dataPengajuan.claim_nilai_hidups.status === 'Ditolak' ? (
-                <Button variant="outline-warning" block size="sm">
+                <Button variant="outline-warning" block size="sm" onClick={handdleManfaat}>
                   Ajukan Kembali
                 </Button>
               ) : (
@@ -312,7 +312,7 @@ export default () => {
                   Ajukan
                 </Button>
               ) : dataPengajuan.claim_pendidikans.status === 'Ditolak' ? (
-                <Button variant="outline-warning" block size="sm">
+                <Button variant="outline-warning" block size="sm" onClick={handdleKacamata}>
                   Ajukan Kembali
                 </Button>
               ) : (
