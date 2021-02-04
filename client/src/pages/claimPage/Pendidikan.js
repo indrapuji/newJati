@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Button, Form, Container, Row, Col } from 'react-bootstrap';
+import { Button, Form, Container, Row, Col, Spinner } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -34,6 +34,7 @@ export default () => {
   function handdleBack() {
     history.push('/');
   }
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     nama: '',
     tgl_lahir: '',
@@ -71,6 +72,7 @@ export default () => {
     }
   };
   const onFormSubmit = async (e) => {
+    setLoading(true);
     try {
       e.preventDefault();
       const newFormData = new FormData();
@@ -85,6 +87,7 @@ export default () => {
           token: localStorage.token,
         },
       });
+      setLoading(false);
       Swal.fire({
         icon: 'success',
         title: 'Pengajuan Claim Kacamata success',
@@ -105,6 +108,7 @@ export default () => {
       } else {
         msg = err.message;
       }
+      setLoading(false);
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -243,9 +247,17 @@ export default () => {
           <Button variant="success" onClick={handdleBack} block>
             Back
           </Button>
-          <Button variant="primary" type="submit" block>
-            Submit
-          </Button>
+          {loading ? (
+            <Button variant="primary" block>
+              <Spinner animation="border" size="sm" role="status">
+                <span className="sr-only">Loading...</span>
+              </Spinner>
+            </Button>
+          ) : (
+            <Button variant="primary" type="submit" block>
+              Submit
+            </Button>
+          )}
         </Form>
       </Container>
     </motion.div>

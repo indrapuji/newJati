@@ -189,7 +189,7 @@ export default () => {
                   Ajukan
                 </Button>
               ) : dataPengajuan.claim_kematians.status === 'Ditolak' ? (
-                <Button variant="outline-warning" block size="sm">
+                <Button variant="outline-warning" block size="sm" onClick={handdleKematian}>
                   Ajukan Kembali
                 </Button>
               ) : (
