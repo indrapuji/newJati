@@ -134,7 +134,7 @@ export default () => {
                 Tanggal Lahir <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="date" name="tgl_lahir" onChange={onFormChange} />
+                <Form.Control type="text" placeholder="YYYY-MM-DD" name="tgl_lahir" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>

@@ -166,12 +166,7 @@ export default () => {
                 Tanggal Lahir <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="date"
-                  value={rev.tgl_lahir}
-                  name="tgl_lahir"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.tgl_lahir} name="tgl_lahir" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -179,12 +174,7 @@ export default () => {
                 No KTP <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.no_ktp}
-                  name="no_ktp"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.no_ktp} name="no_ktp" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -192,12 +182,7 @@ export default () => {
                 No BPJS
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.no_bpjs}
-                  name="no_bpjs"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.no_bpjs} name="no_bpjs" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -205,18 +190,10 @@ export default () => {
                 Data Bank
               </Form.Label>
               <Col xs={3}>
-                <Form.Control
-                  value={rev.nama_bank === '-' ? 'Nama Bank' : rev.nama_bank}
-                  name="nama_bank"
-                  onChange={onFormChange}
-                />
+                <Form.Control value={rev.nama_bank === '-' ? 'Nama Bank' : rev.nama_bank} name="nama_bank" onChange={onFormChange} />
               </Col>
               <Col>
-                <Form.Control
-                  value={rev.no_rekening === '-' ? 'No Rekening' : rev.no_rekening}
-                  name="no_rekening"
-                  onChange={onFormChange}
-                />
+                <Form.Control value={rev.no_rekening === '-' ? 'No Rekening' : rev.no_rekening} name="no_rekening" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -224,11 +201,7 @@ export default () => {
                 Satuan Kerja <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col xs={5}>
-                <Form.Control
-                  value={rev.satuan_kerja === '-' ? 'Satuan Kerja' : rev.satuan_kerja}
-                  name="satuan_kerja"
-                  onChange={onFormChange}
-                />
+                <Form.Control value={rev.satuan_kerja === '-' ? 'Satuan Kerja' : rev.satuan_kerja} name="satuan_kerja" onChange={onFormChange} />
               </Col>
               <Col>
                 <Form.Control
@@ -251,12 +224,7 @@ export default () => {
                 No HP Pensiunan <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.no_telp}
-                  name="no_telp"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.no_telp} name="no_telp" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -264,69 +232,37 @@ export default () => {
                 Alamat <span style={{ color: 'red' }}>*</span>
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.alamat}
-                  name="alamat"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.alamat} name="alamat" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
               <Form.Label column sm="2"></Form.Label>
               <Col xs={5}>
-                <Form.Control
-                  value={rev.kelurahan === '-' ? 'Kelurahan' : rev.kelurahan}
-                  name="kelurahan"
-                  onChange={onFormChange}
-                />
+                <Form.Control value={rev.kelurahan === '-' ? 'Kelurahan' : rev.kelurahan} name="kelurahan" onChange={onFormChange} />
               </Col>
               <Col>
-                <Form.Control
-                  value={rev.kecamatan === '-' ? 'Kecamatan' : rev.kecamatan}
-                  name="kecamatan"
-                  onChange={onFormChange}
-                />
+                <Form.Control value={rev.kecamatan === '-' ? 'Kecamatan' : rev.kecamatan} name="kecamatan" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
               <Form.Label column sm="2"></Form.Label>
               <Col xs={4}>
-                <Form.Control
-                  value={rev.kota === '-' ? 'Kota' : rev.kota}
-                  name="kota"
-                  onChange={onFormChange}
-                />
+                <Form.Control value={rev.kota === '-' ? 'Kota' : rev.kota} name="kota" onChange={onFormChange} />
               </Col>
               <Col>
-                <Form.Control
-                  value={rev.kodepos === '-' ? 'Kodepos' : rev.kodepos}
-                  name="kodepos"
-                  onChange={onFormChange}
-                />
+                <Form.Control value={rev.kodepos === '-' ? 'Kodepos' : rev.kodepos} name="kodepos" onChange={onFormChange} />
               </Col>
               <Col>
-                <Form.Control
-                  value={rev.provinsi === '-' ? 'Provinsi' : rev.provinsi}
-                  name="provinsi"
-                  onChange={onFormChange}
-                />
+                <Form.Control value={rev.provinsi === '-' ? 'Provinsi' : rev.provinsi} name="provinsi" onChange={onFormChange} />
               </Col>
             </Form.Group>
-            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>
-              Data Istri / Suami
-            </h3>
+            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>Data Istri / Suami</h3>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
                 Nama Istri / Suami
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.nama_pasangan}
-                  name="nama_pasangan"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.nama_pasangan} name="nama_pasangan" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -334,12 +270,7 @@ export default () => {
                 Tanggal Lahir Istri / Suami
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="date"
-                  value={rev.tgl_lahir_pasangan}
-                  name="tgl_lahir_pasangan"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="date" value={rev.tgl_lahir_pasangan} name="tgl_lahir_pasangan" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -347,12 +278,7 @@ export default () => {
                 No Telp Istri / Suami
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.no_telp_pasangan}
-                  name="no_telp_pasangan"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.no_telp_pasangan} name="no_telp_pasangan" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -360,12 +286,7 @@ export default () => {
                 No KTP Istri / Suami
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.no_ktp_pasangan}
-                  name="no_ktp_pasangan"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.no_ktp_pasangan} name="no_ktp_pasangan" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -373,12 +294,7 @@ export default () => {
                 No BPJS Istri / Suami
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.no_bpjs_pasangan}
-                  name="no_bpjs_pasangan"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.no_bpjs_pasangan} name="no_bpjs_pasangan" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -394,28 +310,19 @@ export default () => {
               </Col>
               <Col>
                 <Form.Control
-                  value={
-                    rev.no_rekening_pasangan === '-' ? 'No Rekening' : rev.no_rekening_pasangan
-                  }
+                  value={rev.no_rekening_pasangan === '-' ? 'No Rekening' : rev.no_rekening_pasangan}
                   name="no_rekening_pasangan"
                   onChange={onFormChange}
                 />
               </Col>
             </Form.Group>
-            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>
-              Data anak yang masih dalam tanggungan
-            </h3>
+            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>Data anak yang masih dalam tanggungan</h3>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
                 Nama Anak
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.nama_anak}
-                  name="nama_anak"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.nama_anak} name="nama_anak" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -423,12 +330,7 @@ export default () => {
                 Tanggal Lahir Anak
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="date"
-                  value={rev.tgl_lahir_anak}
-                  name="tgl_lahir_anak"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="date" value={rev.tgl_lahir_anak} name="tgl_lahir_anak" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -436,12 +338,7 @@ export default () => {
                 No Telp Anak
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.no_tlp_anak}
-                  name="no_tlp_anak"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.no_tlp_anak} name="no_tlp_anak" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -449,12 +346,7 @@ export default () => {
                 No KTP Anak
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.no_ktp_anak}
-                  name="no_ktp_anak"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.no_ktp_anak} name="no_ktp_anak" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -462,12 +354,7 @@ export default () => {
                 No BPJS Anak
               </Form.Label>
               <Col sm="10">
-                <Form.Control
-                  type="text"
-                  value={rev.no_bpjs_anak}
-                  name="no_bpjs_anak"
-                  onChange={onFormChange}
-                />
+                <Form.Control type="text" value={rev.no_bpjs_anak} name="no_bpjs_anak" onChange={onFormChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -475,11 +362,7 @@ export default () => {
                 Data Bank Anak
               </Form.Label>
               <Col xs={3}>
-                <Form.Control
-                  value={rev.nama_bank_anak === '-' ? 'Nama Bank' : rev.nama_bank_anak}
-                  name="nama_bank_anak"
-                  onChange={onFormChange}
-                />
+                <Form.Control value={rev.nama_bank_anak === '-' ? 'Nama Bank' : rev.nama_bank_anak} name="nama_bank_anak" onChange={onFormChange} />
               </Col>
               <Col>
                 <Form.Control
