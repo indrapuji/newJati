@@ -1,2 +1,2 @@
-const url = 'http://localhost:3001';
+const url = 'https://dev.jatisejahtera.or.id';
 export default url;

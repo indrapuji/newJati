@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Container, Image } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import Pinjaman from '../assets/data/pinjaman perumahan2.png';
-import RealisasiPerumahan from '../assets/realisasi/RealisasiPerumahan2.png';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import axios from 'axios';
+import host from '../hooks/host';
 
 export default () => {
+  const [dataPerumahan, setDataPerumahan] = useState([]);
   useEffect(() => {
     Aos.init({ duration: 2500 });
+    getPerumahan();
   }, []);
   const pageTransition = {
     init: {
@@ -23,6 +25,19 @@ export default () => {
       opacity: 0,
     },
   };
+
+  const getPerumahan = async () => {
+    try {
+      const { data } = await axios({
+        method: 'GET',
+        url: host + '/content?category=perumahan',
+      });
+      setDataPerumahan(data);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
       <Navigation />
@@ -30,18 +45,17 @@ export default () => {
         <div style={{ marginTop: 50 }}>
           <p style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 20 }}>Realisasi Perumahan</p>
         </div>
-        <div data-aos="fade-up">
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: 40, marginBottom: 20 }}>
-            <Image src={RealisasiPerumahan} rounded style={{ height: 400, width: 600 }} />
-          </div>
-          <p style={{ textAlign: 'center', marginTop: -10 }}>Realisasi Pengembalian Iuran Perumahan</p>
-        </div>
-        <div data-aos="fade-up">
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: 40, marginBottom: 20 }}>
-            <Image src={Pinjaman} rounded style={{ height: 400, width: 600 }} />
-          </div>
-          <p style={{ textAlign: 'center', marginTop: -10 }}>Penyaluran Pinjaman Perumahan</p>
-        </div>
+        {dataPerumahan &&
+          dataPerumahan.map((item, index) => {
+            return (
+              <div key={index} data-aos="fade-up">
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: 40, marginBottom: 20 }}>
+                  <Image src={item.image_url} rounded style={{ height: 400, width: 600 }} />
+                </div>
+                <p style={{ textAlign: 'center', marginTop: -10 }}>{item.title}</p>
+              </div>
+            );
+          })}
       </Container>
       <Footer />
     </motion.div>
