@@ -117,7 +117,7 @@ export default () => {
     }
   };
   return (
-    <motion.div initial="init" animate="in" exit="out" variants={pageTransition}>
+    <motion.div initial="init" animate="in" exit="out" variants={pageTransition} style={{ marginBottom: 20 }}>
       <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>Bantuan Kacamata</h1>
       <Container>
         <Form onSubmit={onFormSubmit}>
@@ -254,9 +254,14 @@ export default () => {
               </Spinner>
             </Button>
           ) : (
-            <Button variant="primary" type="submit" block>
-              Submit
-            </Button>
+            <>
+              <Button variant="warning" type="reset" block>
+                Reset
+              </Button>
+              <Button variant="primary" type="submit" block>
+                Submit
+              </Button>
+            </>
           )}
         </Form>
       </Container>
