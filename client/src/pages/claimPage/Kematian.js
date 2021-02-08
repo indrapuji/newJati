@@ -122,6 +122,12 @@ export default () => {
       });
     }
   };
+
+  let sigPad = {};
+
+  const clear = () => {
+    sigPad.clear();
+  };
   return (
     <motion.div initial="init" animate="in" exit="out" variants={pageTransition} style={{ marginBottom: 20 }}>
       <h1 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}>Pengajuan Claim Kematian</h1>
@@ -268,7 +274,7 @@ export default () => {
             <Form.Label>Foto selfie dangan memegang KTP</Form.Label>
             <Form.File.Input name="lampiran" onChange={onFormChange} />
           </Form.Group>
-          <div style={{ marginTop: 10, marginBottom: 10 }}>
+          <div style={{ marginTop: 10, marginBottom: 50 }}>
             <p>Tanda tangan</p>
             <div
               style={{
@@ -288,6 +294,9 @@ export default () => {
                   top: 5,
                   left: 20,
                 }}
+                ref={(ref) => {
+                  sigPad = ref;
+                }}
               />
             </div>
           </div>
@@ -302,7 +311,7 @@ export default () => {
             </Button>
           ) : (
             <>
-              <Button variant="warning" type="reset" block>
+              <Button variant="warning" type="reset" block onClick={clear}>
                 Reset
               </Button>
               <Button variant="primary" type="submit" block>
