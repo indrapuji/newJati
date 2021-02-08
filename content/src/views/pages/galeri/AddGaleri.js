@@ -23,51 +23,52 @@ import axios from 'axios';
 import HostUrl from '../../../utilities/HostUrl';
 import newAlert from '../../../components/NewAlert';
 
-const RegisterCompany = () => {
+const AddGalery = () => {
   const [formData, setFormData] = useState({
-    nama: '',
-    kode_perusahaan: '',
-    alamat_1: '',
-    alamat_2: '',
-    provinsi: '',
-    kota: '',
-    kecamatan: '',
-    kelurahan: '',
-    kode_pos: '',
-    telepon: '',
-    pic: '',
-    email: '',
+    image_url: '',
+    category: 'galeri',
+    title: '',
   });
 
   const history = useHistory();
   const onFormChange = (event) => {
-    const { value, name } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    const { name, value, files } = event.target;
+    if (files) {
+      setFormData({
+        ...formData,
+        [name]: files[0],
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
   const submitForm = async (e) => {
+    console.log(formData);
     try {
       e.preventDefault();
-      const { nama, kode_perusahaan, alamat_1 } = formData;
-      if (nama === '' || kode_perusahaan === '' || alamat_1 === '') {
+      const { image_url, title } = formData;
+      if (image_url === '' || title === '') {
         newAlert({ status: 'error', message: 'Isi Semua Form' });
         return;
       }
+      const newFormData = new FormData();
+      for (let keys in formData) {
+        newFormData.append(`${keys}`, formData[keys]);
+      }
+
       await axios({
         method: 'POST',
-        url: HostUrl + '/company/create',
-        data: formData,
-        headers: {
-          token: localStorage.getItem('token'),
-        },
+        url: HostUrl + '/content/create',
+        data: newFormData,
       });
       newAlert({ status: 'success', message: 'Berhasil' });
-      history.push('/perusahaan');
+      history.push('/galeri');
     } catch (error) {
-      // const { msg } = error.response.data;
-      newAlert({ status: 'error', message: 'Gunakan kode perusahaan lain' });
+      const { msg } = error.response.data;
+      newAlert({ status: 'error', message: msg });
       console.log(error.response.data);
     }
   };
@@ -84,21 +85,21 @@ const RegisterCompany = () => {
                 <CFormGroup row>
                   <CCol md="3">
                     <CLabel htmlFor="text-input">
-                      <small>Title</small>
+                      <small>image</small>
                     </CLabel>
                   </CCol>
                   <CCol md="9">
-                    <CInput custom size="sm" name="nama" onChange={onFormChange} />
+                    <CInputFile size="sm" name="image_url" onChange={onFormChange} />
                   </CCol>
                 </CFormGroup>
                 <CFormGroup row>
                   <CCol md="3">
                     <CLabel htmlFor="text-input">
-                      <small>image</small>
+                      <small>Deskripsi</small>
                     </CLabel>
                   </CCol>
                   <CCol md="9">
-                    <CInputFile id="file-input" size="sm" name="file-input" onChange={onFormChange} />
+                    <CInput custom size="sm" name="title" onChange={onFormChange} />
                   </CCol>
                 </CFormGroup>
                 <CCardFooter>
@@ -115,4 +116,4 @@ const RegisterCompany = () => {
   );
 };
 
-export default RegisterCompany;
+export default AddGalery;
