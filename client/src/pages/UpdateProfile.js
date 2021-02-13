@@ -100,6 +100,7 @@ export default () => {
   const onFormChange = (e) => {
     e.preventDefault();
     const { value, name } = e.target;
+    console.log(value);
     setRev({
       ...rev,
       [name]: value,
