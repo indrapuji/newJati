@@ -56,7 +56,7 @@ export default () => {
       }
       Swal.fire({
         icon: 'error',
-        title: 'Oops...',
+        title: 'Nama Atau Password salah',
         html: `${msg}`,
       });
     }
