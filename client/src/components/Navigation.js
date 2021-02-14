@@ -52,13 +52,13 @@ export default () => {
           </NavDropdown>
           <NavDropdown title="Data">
             <NavDropdown.Item>
-              <Link to="/data/realisasipendidikan">Data Realisasi Pendidikan</Link>
+              <Link to="/data/realisasipendidikan">Realisasi Program Pendidikan</Link>
             </NavDropdown.Item>
             <NavDropdown.Item>
-              <Link to="/data/realisasiperumahan">Data Realisasi Perumahan</Link>
+              <Link to="/data/realisasiperumahan">Realisasi Program Perumahan</Link>
             </NavDropdown.Item>
             <NavDropdown.Item>
-              <Link to="/data/realisasikesehatan">Data Realisasi Kesehatan</Link>
+              <Link to="/data/realisasikesehatan">Realisasi Program Kesehatan</Link>
             </NavDropdown.Item>
           </NavDropdown>
           <Link to="/berita">Berita</Link>
