@@ -58,7 +58,7 @@ export default () => {
       Swal.fire({
         icon: 'error',
         title: 'Nama Atau Password Salah',
-        html: `Anda Belum Melakukan Pengkinian Data`,
+        html: `Atau <br/> Belum Melakukan Pengkinian Data`,
       });
     }
   };
