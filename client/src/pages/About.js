@@ -5,11 +5,25 @@ import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import Swal from 'sweetalert2';
+import { useHistory } from 'react-router-dom';
 
 export default () => {
+  const history = useHistory();
   useEffect(() => {
     Aos.init({ duration: 2500 });
   }, []);
+  useEffect(() => {
+    if (!localStorage.token) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops... Kamu harus login terlebih dahulu',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      history.push('/#pengkinian-data');
+    }
+  }, [history]);
   const pageTransition = {
     init: {
       opacity: 0,

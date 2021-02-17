@@ -275,7 +275,7 @@ export default () => {
           </div>
         </div>
         <div data-aos="zoom-in">
-          <Card style={{ borderRadius: 20, marginLeft: 350, marginRight: 350, marginBottom: 50 }}>
+          <Card id="pengkinian-data" style={{ borderRadius: 20, marginLeft: 350, marginRight: 350, marginBottom: 50 }}>
             <Card.Body>
               <Card.Title style={{ textAlign: 'center' }}>Perbaharui Data Peserta</Card.Title>
               <Card.Text style={{ textAlign: 'center' }}>Perbaharui data anda sekarang</Card.Text>

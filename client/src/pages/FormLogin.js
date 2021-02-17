@@ -53,11 +53,12 @@ export default () => {
         msg = err.request;
       } else {
         msg = err.message;
+        console.log(msg);
       }
       Swal.fire({
         icon: 'error',
-        title: 'Nama Atau Password salah',
-        html: `${msg}`,
+        title: 'Nama Atau Password Salah',
+        html: `Anda Belum Melakukan Pengkinian Data`,
       });
     }
   };
