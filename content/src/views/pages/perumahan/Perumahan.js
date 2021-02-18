@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { CCard, CCardBody, CCardHeader, CCol, CDataTable, CRow, CButton } from '@coreui/react';
+import { CCard, CCardBody, CCardHeader, CCol, CDataTable, CRow, CButton, CImg } from '@coreui/react';
 import axios from 'axios';
 import HostUrl from '../../../utilities/HostUrl';
 import newAlert from '../../../components/NewAlert';
 
 const fields = [
   { key: 'title', label: 'Deskripsi', _style: { width: '60%' } },
-  { key: 'image_url', label: 'Image Path', _style: { width: '20%' } },
+  { key: 'image_url', label: 'Path', _style: { width: '20%' } },
+  { key: 'image', label: 'Image', _style: { width: '20%' } },
   { key: 'action', _style: { width: '10%' } },
 ];
 const Perumahan = () => {
@@ -80,6 +81,12 @@ const Perumahan = () => {
                       </td>
                     );
                   },
+                  image: (item) => (
+                    <td>
+                      <CImg src={item.image_url} height={100} />
+                      {item.status}
+                    </td>
+                  ),
                 }}
               />
             </CCardBody>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CCard, CCardBody, CCardHeader, CCol, CDataTable, CRow, CButton } from '@coreui/react';
+import { CCard, CCardBody, CCardHeader, CCol, CDataTable, CRow, CButton, CImg } from '@coreui/react';
 import axios from 'axios';
 import HostUrl from '../../../utilities/HostUrl';
 import newAlert from '../../../components/NewAlert';
@@ -7,7 +7,7 @@ import newAlert from '../../../components/NewAlert';
 const fields = [
   { key: 'title', label: 'Title', _style: { width: '40%' } },
   { key: 'text', label: 'Deskripsi', _style: { width: '40%' } },
-  { key: 'image_url', label: 'Image Path' },
+  { key: 'image', label: 'Image' },
   { key: 'action', _style: { width: '10%' } },
 ];
 
@@ -82,6 +82,12 @@ const Berita = () => {
                       </td>
                     );
                   },
+                  image: (item) => (
+                    <td>
+                      <CImg src={item.image_url} height={100} />
+                      {item.status}
+                    </td>
+                  ),
                 }}
               />
             </CCardBody>
