@@ -60,6 +60,7 @@ export default () => {
         title: 'Nama Atau Password Salah',
         html: `Atau <br/> Belum Melakukan Pengkinian Data`,
       });
+      history.push('/data/update');
     }
   };
   return (
