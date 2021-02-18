@@ -74,7 +74,7 @@ export default () => {
             <input type="text" className="fadeIn second textInput" name="nama" placeholder="nama" onChange={onFormChange} />
             <div style={{ fontSize: 10, color: 'grey' }}>*Penulisan nama gunakan huruf kecil, tanpa gelar</div>
             <input type="password" className="fadeIn third textInput" name="password" placeholder="password" onChange={onFormChange} />
-            <div style={{ fontSize: 10, color: 'grey' }}>*Penulisan Pasword gunakan NIK</div>
+            <div style={{ fontSize: 10, color: 'grey' }}>*Penulisan Pasword gunakan NIK / NPP</div>
             <div style={{ marginTop: '3%', marginBottom: '3%', marginLeft: '7%', marginRight: '7%' }}>
               <Button className="fadeIn fourth" block type="submit">
                 Login

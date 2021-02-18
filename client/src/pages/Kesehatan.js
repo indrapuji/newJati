@@ -109,14 +109,16 @@ export default () => {
             <li>3 bulan masa tunda kwitansi sejak permohonan.</li>
           </ul>
         </div>
-        <div data-aos="flip-left" style={{ textAlign: 'center', marginTop: 50 }}>
-          <p>SK Kesehatan No30KPTSYKP3JS-2020</p>
-          <iframe
-            src="https://dev.jatisejahtera.or.id/uploads/SK Kesehatan No30KPTSYKP3JS2020_.pdf"
-            title="SK Kesehatan No30KPTSYKP3JS2020"
-            style={{ width: 700, height: 700 }}
-          ></iframe>
-        </div>
+        {localStorage.token && (
+          <div data-aos="flip-left" style={{ textAlign: 'center', marginTop: 50 }}>
+            <p>SK Kesehatan No30KPTSYKP3JS-2020</p>
+            <iframe
+              src="https://dev.jatisejahtera.or.id/uploads/SK Kesehatan No30KPTSYKP3JS2020_.pdf"
+              title="SK Kesehatan No30KPTSYKP3JS2020"
+              style={{ width: 700, height: 700 }}
+            ></iframe>
+          </div>
+        )}
       </Container>
       <Footer />
     </motion.div>
