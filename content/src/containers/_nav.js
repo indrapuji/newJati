@@ -47,6 +47,16 @@ const _nav = [
     to: '/galeri',
     icon: <CIcon name="cil-star" customClasses="c-sidebar-nav-icon" />,
   },
+  {
+    _tag: 'CSidebarNavTitle',
+    _children: ['Print'],
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Transfer',
+    to: '/transfer',
+    icon: <CIcon name="cil-star" customClasses="c-sidebar-nav-icon" />,
+  },
 ];
 
 export default _nav;
