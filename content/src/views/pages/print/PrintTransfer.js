@@ -14,7 +14,7 @@ import {
   CCardHeader,
 } from '@coreui/react';
 import CIcon from '@coreui/icons-react';
-// import newAlert from '../../../components/NewAlert';
+import newAlert from '../../../components/NewAlert';
 
 const AddGalery = () => {
   const [formData, setFormData] = useState({
@@ -40,6 +40,7 @@ const AddGalery = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     console.log(formData);
+    newAlert({ status: 'success', message: 'Berhasil' });
   };
   return (
     <CContainer>
