@@ -65,6 +65,15 @@ export default () => {
   const onFormSubmit = async (e) => {
     try {
       e.preventDefault();
+      if (dataForm.no_induk.length < 9) {
+        Swal.fire({
+          icon: `error`,
+          title: `NIP/NPP/NIK harus lebih dari / sama dengan 9 karakter`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        return;
+      }
       await axios({
         method: 'POST',
         url: `${host}/users/super/pengkinian-data`,
@@ -172,7 +181,11 @@ export default () => {
                 <Form.Control placeholder="Satuan Kerja Saat Pensiun" name="satuan_kerja" onChange={onFormChange} />
               </Col>
               <Col>
-                <Form.Control placeholder="Golongan Pangkat Saat Pensiun" name="golongan_pangkat" onChange={onFormChange} />
+                <Form.Control
+                  placeholder="Golongan Pangkat Saat Pensiun"
+                  name="golongan_pangkat"
+                  onChange={onFormChange}
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -272,7 +285,9 @@ export default () => {
                 <Form.Control placeholder="No Rekening" name="no_rekening_pasangan" onChange={onFormChange} />
               </Col>
             </Form.Group>
-            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>Data anak yang masih dalam tanggungan</h3>
+            <h3 style={{ fontWeight: 'bold', marginBottom: 20, marginTop: 40 }}>
+              Data anak yang masih dalam tanggungan
+            </h3>
             <Form.Group as={Row}>
               <Form.Label column sm="2">
                 Nama Anak
