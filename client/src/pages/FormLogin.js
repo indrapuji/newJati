@@ -5,9 +5,11 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import host from '../hooks/host';
+import { FaEyeSlash, FaEye } from 'react-icons/fa';
 
 export default () => {
   const history = useHistory();
+  const [show, setShow] = useState(false);
   const pageTransition = {
     init: {
       opacity: 0,
@@ -19,6 +21,11 @@ export default () => {
       opacity: 0,
     },
   };
+
+  const showPass = () => {
+    setShow(!show);
+  };
+
   const [dataForm, setDataForm] = useState({
     nama: '',
     password: '',
@@ -71,9 +78,31 @@ export default () => {
             <h1>Login</h1>
           </div>
           <form onSubmit={onFormSubmit}>
-            <input type="text" className="fadeIn second textInput" name="nama" placeholder="nama" onChange={onFormChange} />
+            <input
+              type="text"
+              className="fadeIn second textInput"
+              name="nama"
+              placeholder="nama"
+              onChange={onFormChange}
+            />
             <div style={{ fontSize: 10, color: 'grey' }}>*Penulisan nama gunakan huruf kecil, tanpa gelar</div>
-            <input type="password" className="fadeIn third textInput" name="password" placeholder="password" onChange={onFormChange} />
+            <div style={{ position: 'relative' }}>
+              {show ? (
+                <FaEye style={{ position: 'absolute', zIndex: 1, top: 25, right: 50 }} onClick={() => showPass()} />
+              ) : (
+                <FaEyeSlash
+                  style={{ position: 'absolute', zIndex: 1, top: 25, right: 50 }}
+                  onClick={() => showPass()}
+                />
+              )}
+              <input
+                type={show ? 'text' : 'password'}
+                className="fadeIn third textInput"
+                name="password"
+                placeholder="password"
+                onChange={onFormChange}
+              />
+            </div>
             <div style={{ fontSize: 10, color: 'grey' }}>*Penulisan Pasword gunakan NIK / NPP</div>
             <div style={{ marginTop: '3%', marginBottom: '3%', marginLeft: '7%', marginRight: '7%' }}>
               <Button className="fadeIn fourth" block type="submit">
